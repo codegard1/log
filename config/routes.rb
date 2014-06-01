@@ -1,5 +1,11 @@
 Log::Application.routes.draw do
 
+  get "move_types/new"
+  get "move_types/edit"
+  get "moves/new"
+  get "moves/edit"
+  get "moves/create"
+  get "assets/new"
   resources :users
   resources :assets
   resources :moves
