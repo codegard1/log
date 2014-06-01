@@ -1,0 +1,49 @@
+               Prefix Verb   URI Pattern                                           Controller#Action
+                users GET    /users(.:format)                                      users#index
+                      POST   /users(.:format)                                      users#create
+             new_user GET    /users/new(.:format)                                  users#new
+            edit_user GET    /users/:id/edit(.:format)                             users#edit
+                 user GET    /users/:id(.:format)                                  users#show
+                      PATCH  /users/:id(.:format)                                  users#update
+                      PUT    /users/:id(.:format)                                  users#update
+                      DELETE /users/:id(.:format)                                  users#destroy
+                moves GET    /moves(.:format)                                      moves#index
+                      POST   /moves(.:format)                                      moves#create
+             new_move GET    /moves/new(.:format)                                  moves#new
+            edit_move GET    /moves/:id/edit(.:format)                             moves#edit
+                 move GET    /moves/:id(.:format)                                  moves#show
+                      PATCH  /moves/:id(.:format)                                  moves#update
+                      PUT    /moves/:id(.:format)                                  moves#update
+                      DELETE /moves/:id(.:format)                                  moves#destroy
+    asset_type_assets GET    /asset_types/:asset_type_id/assets(.:format)          assets#index
+                      POST   /asset_types/:asset_type_id/assets(.:format)          assets#create
+ new_asset_type_asset GET    /asset_types/:asset_type_id/assets/new(.:format)      assets#new
+edit_asset_type_asset GET    /asset_types/:asset_type_id/assets/:id/edit(.:format) assets#edit
+     asset_type_asset GET    /asset_types/:asset_type_id/assets/:id(.:format)      assets#show
+                      PATCH  /asset_types/:asset_type_id/assets/:id(.:format)      assets#update
+                      PUT    /asset_types/:asset_type_id/assets/:id(.:format)      assets#update
+                      DELETE /asset_types/:asset_type_id/assets/:id(.:format)      assets#destroy
+          asset_types GET    /asset_types(.:format)                                asset_types#index
+                      POST   /asset_types(.:format)                                asset_types#create
+       new_asset_type GET    /asset_types/new(.:format)                            asset_types#new
+      edit_asset_type GET    /asset_types/:id/edit(.:format)                       asset_types#edit
+           asset_type GET    /asset_types/:id(.:format)                            asset_types#show
+                      PATCH  /asset_types/:id(.:format)                            asset_types#update
+                      PUT    /asset_types/:id(.:format)                            asset_types#update
+                      DELETE /asset_types/:id(.:format)                            asset_types#destroy
+      move_type_moves GET    /move_types/:move_type_id/moves(.:format)             moves#index
+                      POST   /move_types/:move_type_id/moves(.:format)             moves#create
+   new_move_type_move GET    /move_types/:move_type_id/moves/new(.:format)         moves#new
+  edit_move_type_move GET    /move_types/:move_type_id/moves/:id/edit(.:format)    moves#edit
+       move_type_move GET    /move_types/:move_type_id/moves/:id(.:format)         moves#show
+                      PATCH  /move_types/:move_type_id/moves/:id(.:format)         moves#update
+                      PUT    /move_types/:move_type_id/moves/:id(.:format)         moves#update
+                      DELETE /move_types/:move_type_id/moves/:id(.:format)         moves#destroy
+           move_types GET    /move_types(.:format)                                 move_types#index
+                      POST   /move_types(.:format)                                 move_types#create
+        new_move_type GET    /move_types/new(.:format)                             move_types#new
+       edit_move_type GET    /move_types/:id/edit(.:format)                        move_types#edit
+            move_type GET    /move_types/:id(.:format)                             move_types#show
+                      PATCH  /move_types/:id(.:format)                             move_types#update
+                      PUT    /move_types/:id(.:format)                             move_types#update
+                      DELETE /move_types/:id(.:format)                             move_types#destroy
