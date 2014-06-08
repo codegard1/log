@@ -1,0 +1,10 @@
+<!-- show all AssetType -->
+ <ol>
+<% @asset_types.each do |asset_type| %>
+ <li>
+  <%= asset_type.title %><br>
+    <%= asset_type.group %>
+      </li>
+  <% end %>
+    </ol>
+  
