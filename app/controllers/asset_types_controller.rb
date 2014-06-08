@@ -9,7 +9,7 @@ class AssetTypesController < ApplicationController
   def create
     @asset_type = AssetType.create(params[:asset_type].permit(:title,:group))
     if @asset_type.save 
-      puts "the group wascreated"
+      render 'index'
     end
   end
 
