@@ -1,0 +1,17 @@
+<!-- show all AssetType -->
+<ol>
+<% @asset_types.each do |asset_type| %>
+ 
+    <li>
+      <span>Title: 
+        <%= asset_type.title %></span><br>
+      <span>Group: 
+        <%= asset_type.group %></span>
+        </li>
+  
+  <% end %>
+    
+</ol>
+
+<%= link_to "New Type", new_asset_type_path %> &nbsp; 
+<%= link_to "New Asset", new_asset_path %>

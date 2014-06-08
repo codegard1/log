@@ -3,13 +3,12 @@ class AssetTypesController < ApplicationController
   
   def new
     @asset_type = AssetType.new
-    #@asset_types = AssetType.all
   end
   
   def create
     @asset_type = AssetType.create(params[:asset_type].permit(:title,:group))
     if @asset_type.save 
-      render 'index'
+      redirect_to asset_types_path
     end
   end
 

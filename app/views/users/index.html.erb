@@ -1,0 +1,11 @@
+<!-- Show all users -->
+<ol>
+<% @users.each do |user| %>
+  <li>
+  <span>id: <%= user.id %></span><br>
+  <span>name: <%= user.name %></span><br>
+    <span>phone: <%= user.phone %></span></li>
+<% end %>
+</ol>
+
+<%= link_to 'New User', new_user_path %>

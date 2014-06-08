@@ -1,2 +1,18 @@
-<h1>Assets#new</h1>
-<p>Find me in app/views/assets/new.html.erb</p>
+<!-- new asset record -->
+<h3>New Asset</h3>
+
+<% form_for @asset do |f| %>
+
+
+<%= f.collection_select(:asset, :user_id, User.all, :id, :name) %>
+
+<%= f.submit %>
+
+<% end %>
+
+<!-- create_table "assets", force: true do |t|
+    t.integer  "asset_type_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  -->
