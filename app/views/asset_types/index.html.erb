@@ -4,9 +4,9 @@
  
     <li>
       <span>Title: 
-        <%= asset_type.title %></span><br>
+        <strong><%= asset_type.title %></strong></span><br>
       <span>Group: 
-        <%= asset_type.group %></span>
+        <em><%= asset_type.group %></em></span>
         </li>
   
   <% end %>
@@ -14,4 +14,5 @@
 </ol>
 
 <%= link_to "New Type", new_asset_type_path %> &nbsp; 
-<%= link_to "New Asset", new_asset_path %>
+<%= link_to "New Asset", new_asset_path %> &nbsp;
+<%= link_to "Home", root_path %>

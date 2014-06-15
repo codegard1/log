@@ -1,0 +1,19 @@
+assets#index
+<!-- show all Asset -->
+<ol>
+<% @assets.each do |asset| %>
+ 
+    <li>
+      <span>Title: 
+        <strong><%= asset.asset_type_id %></strong></span><br>
+      <span>Type:
+        <em><%= asset.user_id %></em></span>
+        </li>
+  
+  <% end %>
+    
+</ol>
+
+<%= link_to "New Asset", new_asset_path %> &nbsp; 
+<%= link_to "New Type", new_asset_type_path %> &nbsp;
+<%= link_to "Home", root_path %>
