@@ -18,7 +18,7 @@ Log::Application.routes.draw do
   end
   #assettype.asset.create
   
-  
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
