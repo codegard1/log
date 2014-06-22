@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
   def new
     @asset = Asset.new
+    @user = User.where( :id => params[:id] ).first
   end
   
   def create

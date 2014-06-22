@@ -2,10 +2,18 @@
 <ol>
 <% @users.each do |user| %>
   <li>
-  <span>id: <%= user.id %></span><br>
-  <span>name: <%= user.name %></span><br>
-    <span>phone: <%= user.phone %></span></li>
+    <!--<span>id: <%= user.id %></span><br> -->
+    <span>name:<strong> <%= user.name %></em></strong><br>
+    <span>phone: <%= user.phone %></span><br>
+    <span>assets owned: <%= user.assets.count %></span>
+  </li>
+  <%= link_to 'Show all Assets', user_path(user) %>
+  <br><br>
 <% end %>
 </ol>
 
-<%= link_to 'New User', new_user_path %>
+<!-- footer links: back, New User, New Move, New Asset -->
+<%= link_to 'Back', :back %> &nbsp;
+<%= link_to 'New User', new_user_path %> &nbsp;
+<%= link_to 'New Move', new_move_path %> &nbsp;
+<%= link_to 'New Asset Record', new_asset_path %> &nbsp;

@@ -4,4 +4,11 @@ class MoveTypesController < ApplicationController
 
   def edit
   end
+  
+  def create
+  end
+  
+  def index
+  end
+  
 end

@@ -15,4 +15,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+  def show
+    @user = User.where(:id => params[:id]).first
+    @user_assets = @user.assets.all
+  end
 end

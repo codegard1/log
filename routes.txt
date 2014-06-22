@@ -20,14 +20,6 @@
                       PATCH  /moves/:id(.:format)                                  moves#update
                       PUT    /moves/:id(.:format)                                  moves#update
                       DELETE /moves/:id(.:format)                                  moves#destroy
-          asset_types GET    /asset_types(.:format)                                asset_types#index
-                      POST   /asset_types(.:format)                                asset_types#create
-       new_asset_type GET    /asset_types/new(.:format)                            asset_types#new
-      edit_asset_type GET    /asset_types/:id/edit(.:format)                       asset_types#edit
-           asset_type GET    /asset_types/:id(.:format)                            asset_types#show
-                      PATCH  /asset_types/:id(.:format)                            asset_types#update
-                      PUT    /asset_types/:id(.:format)                            asset_types#update
-                      DELETE /asset_types/:id(.:format)                            asset_types#destroy
     asset_type_assets GET    /asset_types/:asset_type_id/assets(.:format)          assets#index
                       POST   /asset_types/:asset_type_id/assets(.:format)          assets#create
  new_asset_type_asset GET    /asset_types/:asset_type_id/assets/new(.:format)      assets#new
@@ -36,11 +28,11 @@ edit_asset_type_asset GET    /asset_types/:asset_type_id/assets/:id/edit(.:forma
                       PATCH  /asset_types/:asset_type_id/assets/:id(.:format)      assets#update
                       PUT    /asset_types/:asset_type_id/assets/:id(.:format)      assets#update
                       DELETE /asset_types/:asset_type_id/assets/:id(.:format)      assets#destroy
-                      GET    /asset_types(.:format)                                asset_types#index
+          asset_types GET    /asset_types(.:format)                                asset_types#index
                       POST   /asset_types(.:format)                                asset_types#create
-                      GET    /asset_types/new(.:format)                            asset_types#new
-                      GET    /asset_types/:id/edit(.:format)                       asset_types#edit
-                      GET    /asset_types/:id(.:format)                            asset_types#show
+       new_asset_type GET    /asset_types/new(.:format)                            asset_types#new
+      edit_asset_type GET    /asset_types/:id/edit(.:format)                       asset_types#edit
+           asset_type GET    /asset_types/:id(.:format)                            asset_types#show
                       PATCH  /asset_types/:id(.:format)                            asset_types#update
                       PUT    /asset_types/:id(.:format)                            asset_types#update
                       DELETE /asset_types/:id(.:format)                            asset_types#destroy
@@ -60,3 +52,4 @@ edit_asset_type_asset GET    /asset_types/:asset_type_id/assets/:id/edit(.:forma
                       PATCH  /move_types/:id(.:format)                             move_types#update
                       PUT    /move_types/:id(.:format)                             move_types#update
                       DELETE /move_types/:id(.:format)                             move_types#destroy
+                 root GET    /                                                     welcome#index
