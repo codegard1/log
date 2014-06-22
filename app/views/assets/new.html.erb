@@ -1,11 +1,23 @@
 <h3>New Asset</h3>
 
 <%= form_for @asset do |f| %>
-<!-- Get AssetType id -->
-<%= collection_select(:asset, :asset_type_id, AssetType.all, :id, :title) %><br>
-<!-- Get User id -->
-<%= collection_select(:asset, :user_id, User.all, :id, :name) %>
-<%= f.submit %>
+
+  <!-- Get AssetType id -->
+  <span>
+    Asset Type: &nbsp;
+    <%= collection_select(:asset, :asset_type_id, AssetType.all, :id, :title) %></span><br>
+
+  <!-- Get User id -->
+  <span>
+    User: &nbsp;
+    <%= collection_select(:asset, :user_id, User.all, :id, :name) %></span><br>
+
+  <!-- Enter Asset Tag -->
+  <span>
+    Asset Tag: &nbsp; 
+    <%= f.text_field :asset_tag %></span><br>
+
+  <%= f.submit %>
 <% end %>
 
 

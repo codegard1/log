@@ -14,7 +14,10 @@ assets#index
         <em>
           <!-- select user from user where id = asset.user_id -->
           <% asset_user = User.where(:id => asset.user_id).first %>
-          <%= asset_user.name %></em></span>
+          <%= asset_user.name %></em></span><br>
+      <span>Asset Tag:
+        <em>
+          <%= asset.asset_tag %></em></span>
         </li>
   
   <% end %>
