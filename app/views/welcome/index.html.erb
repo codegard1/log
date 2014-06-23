@@ -1,7 +1,10 @@
-<div><!-- Put Universal Nav Bar Here --></div>
-
+<!-- Put Universal Nav Bar Here -->
+<h2>Log Lady 3.001a</h2>
 <div>
   <h4>Welcome to the index!</h4>
+  <hr>
+
+  <h4>Project Notes:</h4>
   <ol>
   <!-- USERS -->
   <li><p><%= link_to 'Users', users_path %></p>
@@ -15,8 +18,20 @@
     <p>Status: nonworking / In Progress.<br>
     <ul>
       <li>#create</li>
-      <li>#new</li>
-      <li>#index</li>
+      <li>#new
+        <ul>
+          <li>To Do: Convert IDs in collection_selects into readable strings</li>
+          <li>To Do: insert partial form for creating a new Asset record simultaneously with the Move Record</li>
+          <li>To Do: Make Pre-Existing Asset Selection box read from Assets belonging to the selected user (tricky)</li>
+        </ul>
+      </li>
+      <li>#index
+        <ul>
+          <li>To Do: Convert IDs into readable strings</li>
+          <li>To DO: Convert displayed created_at date to more readable strings</li>
+        </ul>
+      </li>
+
     </ul></p></li>
   <!-- MOVE TYPES -->
   <li><p><%= link_to 'Move Types', move_types_path %></p>

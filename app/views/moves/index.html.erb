@@ -1,1 +1,36 @@
-moves#index
+<h4>Moves</h4>
+
+<!-- Print Status Messages -->
+
+<!-- Print All Move Records -->
+<%= div_for(@moves) do |move| %>
+	<p><%= move.created_at %></p>
+	<p><%= move.description %></p>
+	<p><%= move.user_id %></p>
+	<p><%= move.move_type_id %></p>
+	<p><%= move.asset_id %></p>
+	<p><%=  %></p>
+<% end %>
+
+
+<!-- Bottom Nav -->
+<div id="bottom_nav">
+	<%= link_to 'Back', :back %> &nbsp;
+	<%= link_to 'Home', root_path %> &nbsp;
+	<%= link_to 'Move Types', move_types_path %> &nbsp;
+	<%= link_to 'New Move', new_move_path %> &nbsp;
+</div>
+
+
+
+<!-- reprint of schema.rb for testing purposes:
+
+ create_table "moves", force: true do |t|
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "move_type_id"
+    t.integer  "asset_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+-->
