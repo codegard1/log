@@ -1,18 +1,28 @@
+<div><!-- Put Universal Nav Bar Here --></div>
+
 <div>
-  <p>Welcome to the index!</p>
+  <h4>Welcome to the index!</h4>
   <ol>
+  <!-- USERS -->
   <li><p><%= link_to 'Users', users_path %></p>
     <p>Status: working / partially complete.<br>
     <ul>
     <li>#new
     <li>#create
     <li>#index</ul></p>
+  <!-- MOVES -->
   <li><p><%= link_to 'Moves', moves_path %></p>
     <p>Status: nonworking / not started.<br>
     <ul></ul></p>
-<li><p><%= link_to 'Move Types', move_types_path %></p>
-    <p>Status: nonworking / not started.<br>
-    <ul></ul></p>
+  <!-- MOVE TYPES -->
+  <li><p><%= link_to 'Move Types', move_types_path %></p>
+    <p>Status: nonworking / In Progress.<br>
+    <ul>
+      <li>#index</li>
+      <li>#create</li>
+      <li>#new</li>
+      <li>@status_message doesn't print after redirect_to move_types#index </li>
+    </ul></p>
 <li><p><%= link_to 'Assets', assets_path %></p>
     <p>Status: working / partially complete.<br>
     <ul><li>#create
