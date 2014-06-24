@@ -4,11 +4,25 @@
 
 	<!-- Get AssetType id -->
 	Asset Type: <br>
-	<%= collection_select(:asset, :asset_type_id, AssetType.all, :id, :title) %><br>
+	<%= collection_select(
+                :asset, 
+                :asset_type_id, 
+                AssetType.all, 
+                :id, 
+                :title) 
+
+  %><br>
 
   <!-- Get User id -->
   User:<br>
-	<%= collection_select(:asset, :user_id, User.all, :id, :name, {:selected => (@user.id || 0)} ) %><br>
+	<%= collection_select(
+                  :asset, 
+                  :user_id, 
+                  User.all, 
+                  :id, 
+                  :name, 
+                  {:selected => (@user.id || 0)} 
+  ) %><br>
 
   <!-- Enter Asset Tag -->
   Asset Tag:<br>
