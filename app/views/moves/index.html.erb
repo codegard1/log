@@ -4,11 +4,17 @@
 
 <!-- Print All Move Records -->
 <%= div_for(@moves) do |move| %>
-	<p><%= move.created_at %></p>
-	<p><%= move.description %></p>
-	<p><%= move.user_id %></p>
-	<p><%= move.move_type_id %></p>
-	<p><%= move.asset_id %></p>
+	<p>Date Created: &nbsp; 
+		<%= Time.at(
+				move.created_at.to_i).to_date.inspect %></p>
+	<p>Description:&nbsp; 
+		<%= move.description %></p>
+	<p>User: &nbsp; 
+		<%= move.user.name %></p>
+	<p>Move Type: &nbsp; 
+		<%= move.move_type.title %></p>
+	<p>Asset Tag: &nbsp; 
+		<%= move.asset_id %></p>
 	<p><%=  %></p>
 <% end %>
 
