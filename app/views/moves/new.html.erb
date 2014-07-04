@@ -10,7 +10,7 @@
 	<!-- selection field for User -->
   	User:<br>
 	<%= collection_select(
-					:move, 
+          @move, 
 					:user_id, 
 					User.all, 
 					:id, 
@@ -18,13 +18,12 @@
 					{:selected => 0}
 	) %><br>
 
-
 	<!-- Selection field for Move Type -->
 	Move Type:<br>
 	<%= collection_select(
 					:move,
 					:move_type_id,
-					@move_types,
+          MoveType.all,
 					:id,
 					:title,
 					{:selected => 0}
@@ -38,10 +37,10 @@
 					:asset_id,
 					@assets,
 					:id,
-					MoveTypes.title,
+    :asset_type_id,
 					{:selected => 0}
 	) %><br>
-
+<%= @assets.inspect; %>
 	<!-- Print new asset partial -->
   	Create New Asset for This Move:<br>
 
