@@ -6,4 +6,5 @@ class Move < ActiveRecord::Base
   validates :user_id, presence: true, numericality:  {only_integer: true}
   validates :move_type_id, presence: true, numericality:  {only_integer: true}
   validates :asset_id, presence: true, numericality:  {only_integer: true}
+  validates :description, length: {in: 1..120}
 end

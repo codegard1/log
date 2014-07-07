@@ -37,7 +37,7 @@
 					:asset_id,
 					@assets,
 					:id,
-    :asset_type_id,
+          :asset_type_id,
 					{:selected => 0}
 	) %><br>
 <%= @assets.inspect; %>
@@ -47,13 +47,3 @@
 	<%= f.submit  %>
 <% end %>
 
-<!-- reprint of schema.rb for testing purposes:
-
- create_table "moves", force: true do |t|
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "move_type_id"
-    t.integer  "asset_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end -->
