@@ -2,10 +2,8 @@ class MovesController < ApplicationController
   def new
   	@move = Move.new
     @user = User.where( :id => params[:id] ).first
-    @move_types = MoveType.pluck( [:id, :title] ) 
-    @asset_types = AssetType.pluck( [:id, :title])
-    @assets = Asset.all.sort_by! &:asset_tag
-    #@assets = Asset.select( [:id, :asset_tag, :asset_type_id] ).collect &:asset_type_id
+    @move_types = MoveType.select(:id, :title).sort_by! &:title
+    @assets = Asset.select(:id, :asset_tag, :asset_type_id).sort_by! &:asset_tag
   end
 
   def edit

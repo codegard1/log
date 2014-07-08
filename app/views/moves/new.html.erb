@@ -10,12 +10,12 @@
 	<!-- selection field for User -->
   	User:<br>
 	<%= collection_select(
-          :move, 
+				  :move, 
 					:user_id, 
 					User.all, 
 					:id, 
 					:name, 
-					{:selected => 0}
+					:prompt => true
 	) %><br>
 
 	<!-- Selection field for Move Type -->
@@ -26,7 +26,7 @@
           MoveType.all,
 					:id,
 					:title,
-					{:selected => 0}
+					:prompt => true
 	) %><br>
 
 
@@ -36,14 +36,15 @@
 					:move,
 					:asset_id,
 					@assets,
-					:id,
-          :asset_type_id,
-					{:selected => 0}
+          :id,
+          :asset_tag_and_asset_type,
+          :prompt => true
 	) %><br>
-<%= @assets.inspect; %>
-	<!-- Print new asset partial -->
-  	Create New Asset for This Move:<br>
 
+	<!-- Print new asset partial 
+  	Create New Asset for This Move:<br>
+-->
+  <br><br>
 	<%= f.submit  %>
 <% end %>
 
