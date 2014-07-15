@@ -5,8 +5,7 @@ class Asset < ActiveRecord::Base
   # method to return the asset tag & asset type together as a string
   def asset_tag_and_asset_type
     @@type = AssetType.where(:id => self.asset_type_id).first.title
-    "#{self.asset_tag}  -  #{@@type}"
+    return "#{self.asset_tag}  -  #{@@type}"
   end
   
-  def 
 end
