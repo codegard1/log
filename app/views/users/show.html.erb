@@ -9,16 +9,9 @@
 <% @user_assets.each do |user_asset| %>
     <ol>
       <li>
-        <span>Title:
-          <em>
-            <!-- select title from asset where id = user_asset.asset_type_id -->
-            <% user_asset_type = AssetType.where(:id => user_asset.asset_type_id).first %>
-            <%= user_asset_type.title %>
-          </em></span><br>
-
-        <span>Asset Tag:
-          <em>
-            <%= user_asset.asset_tag %></em></span>
+        <span>Title: <em><%= user_asset.title or "None" %></em></span><br>
+	<span>Type: <em><%= user_asset.asset_type.title %></em></span><br>
+        <span>Asset Tag: <em><%= user_asset.asset_tag %></em></span>
       </li>
     </ol>
   <% end %> 

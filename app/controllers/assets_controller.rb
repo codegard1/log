@@ -5,7 +5,7 @@ class AssetsController < ApplicationController
   end
   
   def create
-    @asset = Asset.create(params[:asset].permit(:asset_type_id,:user_id, :asset_tag))
+    @asset = Asset.create(params[:asset].permit(:title,:asset_type_id,:user_id, :asset_tag))
     if @asset.save 
       redirect_to assets_path
     end

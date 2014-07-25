@@ -2,6 +2,10 @@
 
 <%= form_for @asset do |f| %>
 
+	<!-- get title -->
+	<%= f.label :title %>
+	<%= f.text_field :title %><br>
+
 	<!-- Get AssetType id -->
 	Asset Type: <br>
 	<%= collection_select(
@@ -21,7 +25,6 @@
                   User.all, 
                   :id, 
                   :name, 
-                  {:selected => (@user.id || 0)} 
   ) %><br>
 
   <!-- Enter Asset Tag -->
