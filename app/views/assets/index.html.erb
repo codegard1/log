@@ -1,4 +1,5 @@
-assets#index
+<%= render "shared/navigation_top" %>
+<h3>Assets</h3>
 <!-- show all Asset -->
 <ol>
 <% @assets.each do |asset| %>
@@ -16,4 +17,3 @@ assets#index
 
 <%= link_to "New Asset", new_asset_path %> &nbsp; 
 <%= link_to "New Type", new_asset_type_path %> &nbsp;
-<%= link_to "Home", root_path %>

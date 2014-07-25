@@ -1,0 +1,34 @@
+<%= form_for @asset do |f| %>
+
+	<!-- get title -->
+	<%= f.label :title %>
+	<%= f.text_field :title %><br>
+
+	<!-- Get AssetType id -->
+	Asset Type: <br>
+	<%= collection_select(
+                :asset, 
+                :asset_type_id, 
+                AssetType.all, 
+                :id, 
+                :title) 
+
+  %><br>
+
+  <!-- Get User id -->
+  User:<br>
+	<%= collection_select(
+                  :asset, 
+                  :user_id, 
+                  User.all, 
+                  :id, 
+                  :name, 
+  ) %><br>
+
+  <!-- Enter Asset Tag -->
+  Asset Tag:<br>
+  <%= f.text_field :asset_tag %><br>
+  
+  <%= f.submit %>
+<% end %>
+

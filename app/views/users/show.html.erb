@@ -1,3 +1,5 @@
+<%= render "shared/navigation_top" %>
+
 <!-- print user name -->
 <h3>
   <span>
@@ -21,8 +23,5 @@
 
 <!-- footer links: Home, Users, New Asset for this User -->
 <span>
-  <%= link_to :back %> &nbsp;
-  <%= link_to 'Home', root_path %> &nbsp;
-  <%= link_to 'Users Index', users_path %> &nbsp;
-  <%= link_to 'New Asset Record for this user', new_asset_path(:id => @user) %>
+	<%= link_to 'New Asset Record for this user', new_asset_path(:id => @user) %>
 </span>

@@ -1,4 +1,5 @@
-<h4>Moves</h4>
+<%= render "shared/navigation_top" %>
+<h3>Moves</h3>
 
 <!-- Print Status Messages -->
 
@@ -21,22 +22,9 @@
 
 <!-- Bottom Nav -->
 <div id="bottom_nav">
-	<%= link_to 'Back', :back %> &nbsp;
-	<%= link_to 'Home', root_path %> &nbsp;
-	<%= link_to 'Move Types', move_types_path %> &nbsp;
 	<%= link_to 'New Move', new_move_path %> &nbsp;
+	<%= link_to 'New Type', new_move_type_path %>
 </div>
 
 
 
-<!-- reprint of schema.rb for testing purposes:
-
- create_table "moves", force: true do |t|
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "move_type_id"
-    t.integer  "asset_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
--->

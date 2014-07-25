@@ -1,4 +1,6 @@
+<%= render "shared/navigation_top" %>
 <!-- Show all users -->
+<h3>Users</h3>
 <ol>
 <% @users.each do |user| %>
   <li>
@@ -13,7 +15,4 @@
 </ol>
 
 <!-- footer links: back, New User, New Move, New Asset -->
-<%= link_to 'Back', :back %> &nbsp;
 <%= link_to 'New User', new_user_path %> &nbsp;
-<%= link_to 'New Move', new_move_path %> &nbsp;
-<%= link_to 'New Asset Record', new_asset_path %> &nbsp;

@@ -1,50 +1,7 @@
 <h4>New Move</h4>
 
 <!-- Form to create a new Move record -->
-<%= form_for @move do |f| %>
+<%= render "form" %>
 
-	<!-- text field for description -->
-	<%= f.label :description %><br>
-	<%= f.text_area :description %><br>
-
-	<!-- selection field for User -->
-  	User:<br>
-	<%= collection_select(
-				  :move, 
-					:user_id, 
-					User.all, 
-					:id, 
-					:name, 
-					:prompt => true
-	) %><br>
-
-	<!-- Selection field for Move Type -->
-	Move Type:<br>
-	<%= collection_select(
-					:move,
-					:move_type_id,
-          MoveType.all,
-					:id,
-					:title,
-					:prompt => true
-	) %><br>
-
-
-	<!-- Selection field for existing Assets-->
-	Select Existing Asset:<br>
-	<%= collection_select(
-					:move,
-					:asset_id,
-					@assets,
-          :id,
-          :asset_tag_and_asset_type,
-          :prompt => true
-	) %><br>
-
-	<!-- Print new asset partial 
-  	Create New Asset for This Move:<br>
--->
-  <br><br>
-	<%= f.submit  %>
-<% end %>
-
+<!-- Cancel button -->
+<%= link_to 'Cancel', :back %>

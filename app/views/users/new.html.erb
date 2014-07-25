@@ -1,11 +1,6 @@
-<%= form_for @user do |f| %>
+<h3>New User</h3>
 
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  
-  <%= f.label :phone %><br>
-  <%= f.text_field :phone %>
+<!-- Render new user form -->
+<%= render "form" %>
 
-  <%= f.submit %>
-
-<% end %>
+<%= link_to 'Cancel', :back %>
