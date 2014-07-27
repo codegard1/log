@@ -1,27 +1,25 @@
 <%= render "shared/navigation_top" %>
 
 <!-- print user name -->
-<h3>
-  <span>
-    Assets belonging to &nbsp;
-    <%= @user.name %></span></h3>
+<h3><span>
+    Assets belonging to <%= @user.name %></span></h3>
 
 <!-- Print ordered list of user asset records -->
 <% if @user_assets.count >= 1 %>
-<% @user_assets.each do |user_asset| %>
-    <ol>
-      <li>
+  <ol>    
+  <%= div_for(@user_assets) do |user_asset| %>
+	<li>
         <span>Title: <em><%= user_asset.title or "None" %></em></span><br>
 	<span>Type: <em><%= user_asset.asset_type.title %></em></span><br>
         <span>Asset Tag: <em><%= user_asset.asset_tag %></em></span>
-      </li>
-    </ol>
-  <% end %> 
+        </li>
+  <% end %>
+  </ol>
 <% else %>
   <h2>No asset records found</h2>
 <% end %>
 
 <!-- footer links: Home, Users, New Asset for this User -->
 <span>
-	<%= link_to 'New Asset Record for this user', new_asset_path(:id => @user) %>
+	<%= link_to 'New Asset Record for '+@user.name, new_asset_path(:id => @user) %>
 </span>

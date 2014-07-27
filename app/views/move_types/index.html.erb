@@ -1,9 +1,7 @@
+<%= render "shared/navigation_top" %>
 <h4>Move Types</h4>
-<!-- print status message -->
 
-<div id="status_message">
-	<%= @status_message %>
-</div>
+<!-- print status message -->
 
 <!-- Print an array of MoveType objects -->
 <%= div_for(@move_types) do |move_type| %>
@@ -12,9 +10,6 @@
 
 <!-- Navigation -->
 <div id="bottom_nav">
-	<%= link_to 'Back', :back %> &nbsp;
-	<%= link_to 'Home', root_path %> &nbsp;
-	<%= link_to 'Moves', moves_path %> &nbsp;
 	<%= link_to 'New Move', moves_new_path %> &nbsp;
 	<%= link_to 'New Move Type', move_types_new_path %> &nbsp;
 </div>
