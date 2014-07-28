@@ -1,18 +1,12 @@
 <%= render "shared/navigation_top" %>
 <!-- Show all users -->
 <h3>Users</h3>
-<ol>
-<% @users.each do |user| %>
-  <li>
-    <!--<span>id: <%= user.id %></span><br> -->
-    <span>name:<strong> <%= user.name %></em></strong><br>
-    <span>phone: <%= user.phone %></span><br>
-    <span>assets owned: <%= user.assets.count %></span>
-  </li>
-  <%= link_to 'Show all Assets', user_path(user) %>
-  <br><br>
+<%= div_for(@users) do |user| %>
+    <span>Name:<strong> <%= user.name %></strong><br>
+    <span>Phone:<strong> <%= user.phone %></strong></span><br>
+    <span>Assets owned:<strong> <%= user.assets.count %></strong></span><br>
+  <%= if(user.assets.count >= 1) then link_to('Show all Assets', user_path(user)) end %>
 <% end %>
-</ol>
 
 <!-- footer links: back, New User, New Move, New Asset -->
 <%= link_to 'New User', new_user_path %> &nbsp;

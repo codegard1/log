@@ -3,16 +3,13 @@
 <!-- show all Asset -->
 <ol>
 <% @assets.each do |asset| %>
- 
-	<li>
-	<span>Title: <%= asset.title %></span><br>
+	<li><div id=<%= 'asset.'+asset.id.to_s %>>
+	<span>Title: <%= asset.title || "none" %></span><br>
       <span>Type: <strong><%= asset.asset_type.title %></strong></span><br>
       <span>User: <em><%= asset.user.name %></em></span><br>
       <span>Asset Tag: <em><%= asset.asset_tag %></em></span>
-        </li>
-  
-  <% end %>
-    
+        </div></li>
+<% end %>
 </ol>
 
 <%= link_to "New Asset", new_asset_path %> &nbsp; 

@@ -1,18 +1,11 @@
+<%= render 'shared/navigation_top' %>
 <!-- show all AssetType -->
-<ol>
-<% @asset_types.each do |asset_type| %>
- 
-    <li>
-      <span>Title: 
+<%= div_for(@asset_types) do |asset_type| %>
+      <span>
         <strong><%= asset_type.title %></strong></span><br>
-      <span>Group: 
+      <span>
         <em><%= asset_type.group %></em></span>
-        </li>
-  
-  <% end %>
-    
-</ol>
+<% end %>    
 
 <%= link_to "New Type", new_asset_type_path %> &nbsp; 
 <%= link_to "New Asset", new_asset_path %> &nbsp;
-<%= link_to "Home", root_path %>
