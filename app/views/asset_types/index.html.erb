@@ -1,11 +1,14 @@
 <%= render 'shared/navigation_top' %>
+<h3>Asset Types</h3>
 <!-- show all AssetType -->
-<%= div_for(@asset_types) do |asset_type| %>
-      <span>
-        <strong><%= asset_type.title %></strong></span><br>
-      <span>
-        <em><%= asset_type.group %></em></span>
-<% end %>    
+<blockquote>
+	<%= div_for(@asset_types) do |asset_type| %>
+      	<span>
+	        <strong><%= link_to asset_type.title, asset_type_path(asset_type.id) %></strong &nbsp;>
+        	(<em><%= asset_type.group %></em>)</span>
+	<% end %>    
+</blockquote>
 
 <%= link_to "New Type", new_asset_type_path %> &nbsp; 
 <%= link_to "New Asset", new_asset_path %> &nbsp;
+

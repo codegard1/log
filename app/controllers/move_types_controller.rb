@@ -17,5 +17,7 @@ class MoveTypesController < ApplicationController
   def index
   	@move_types = MoveType.all.sort_by! &:title
   end
-  
+
+  def show
+  end  
 end

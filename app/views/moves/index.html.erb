@@ -6,17 +6,17 @@
 <!-- Print All Move Records -->
 <%= div_for(@moves) do |move| %>
 	<p>Date Created: &nbsp; 
-		<%= Time.at(
-				move.created_at.to_i).to_date.inspect %></p>
+		<%= Time.at(move.created_at.to_i).to_date.inspect %></p>
 	<p>Description:&nbsp; 
 		<%= move.description %></p>
 	<p>User: &nbsp; 
-    <%= move.user.name %></p>
+    		<%= move.user.name %></p>
 	<p>Move Type: &nbsp; 
 		<%= move.move_type.title %></p>
-	<p>Asset Tag: &nbsp; 
+	<p>Asset Type: &nbsp; 
 		<%= move.asset.asset_type.title %></p>
-	<p><%=  %></p>
+	<p>Asset Tag: &nbsp;
+		<%= move.asset.asset_tag %></p>
 <% end %>
 
 
