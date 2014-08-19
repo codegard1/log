@@ -3,7 +3,7 @@
 <%= div_for( @asset_type ) do %>
 	<!-- link to asset title, show records from ASSET that have this title -->
 	<div>
-		<h2><%= link_to @asset_type.group, asset_type_path(@asset_type.group) %></h2>
+		<h2><%= @asset_type.group %></h2>
 		<p style='margin-left:2em'><%= link_to @asset_type.title, asset_type_path(@asset_type) %></p>
 	</div>
 <% end %>
@@ -18,6 +18,8 @@ controller, then print divs for each object -->
 		<%= asset.updated_at %>
 	<% end %>
 <% end %>
+
+<%= link_to 'New ' + @asset_type.title, new_asset_path(@asset_type.id) %>
 
 <!-- if an object containing assety type groups 
 then print a div for each grouping -->
