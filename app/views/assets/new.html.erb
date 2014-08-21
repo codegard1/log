@@ -1,6 +1,6 @@
 <%= render "shared/navigation_top.html.erb" %>
 <h3>New Asset</h3>
-
+<%= if params then params.inspect end %>
 <!-- Render new asset form -->
 <%= render "form" %>
 

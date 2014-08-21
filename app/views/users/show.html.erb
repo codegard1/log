@@ -6,15 +6,11 @@
 
 <!-- Print ordered list of user asset records -->
 <% if @user_assets.count >= 1 %>
-  <ol>    
   <%= div_for(@user_assets) do |user_asset| %>
-	<li>
-        <span>Title: <em><%= user_asset.title or "None" %></em></span><br>
-	<span>Type: <em><%= user_asset.asset_type.title %></em></span><br>
-        <span>Asset Tag: <em><%= user_asset.asset_tag %></em></span>
-        </li>
+        <span><em><%= user_asset.title or "None" %></em></span><br>
+	<span><em><%= user_asset.asset_type.title or 'No type given' %></em></span><br>
+        <span><em><%= user_asset.asset_tag or 'No asset tag' %></em></span>
   <% end %>
-  </ol>
 <% else %>
   <h2>No asset records found</h2>
 <% end %>

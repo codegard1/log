@@ -6,6 +6,8 @@
     <span>Phone:<strong> <%= user.phone %></strong></span><br>
     <span>Assets owned:<strong> <%= user.assets.count %></strong></span><br>
   <%= if(user.assets.count >= 1) then link_to('Show all Assets', user_path(user)) end %>
+<!-- link to new asset should pass user ID as well -->
+  <%= link_to 'New asset', new_asset_path(), :user => user.id %>
 <% end %>
 
 <!-- footer links: back, New User, New Move, New Asset -->
