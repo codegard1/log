@@ -1,3 +1,15 @@
 // Place all the styles related to the asset_type controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.asset_type {
+	border: 1px solid #eee;
+	padding: 1px;
+	width: auto;
+	height: auto;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	font-size: 14pt;
+	border-radius: 3px;
+}

@@ -1,3 +1,47 @@
 // Place all the styles related to the moves controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.move {
+	border: 1px solid #eee;
+	padding: 1px;
+	width: auto;
+	height: auto;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	font-size: 10pt;
+	border-radius: 3px;
+}
+
+div.move p {
+	margin:2px;
+
+}
+
+div.move p a, div.move p a:hover {
+	text-decoration:none;
+	color: #111;
+}
+
+div.move p:hover {
+	background-color: #eee;
+}
+
+div.move p.date_created {
+
+}
+
+div.move p.description {
+}
+
+div.move p.user_name {
+}
+
+div.move p.move_type {
+}
+
+div.move p.asset_type {
+}
+
+div.move p.asset_tag {
+}

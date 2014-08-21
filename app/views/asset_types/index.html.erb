@@ -3,7 +3,7 @@
 <!-- show all AssetType -->
 <blockquote>
 	<%= div_for(@asset_types) do |asset_type| %>
-      	<span>
+		<span>
 	        <strong><%= link_to asset_type.title, asset_type_path(asset_type.id) %></strong &nbsp;>
         	(<em><%= asset_type.group %></em>)</span>
 	<% end %>    
