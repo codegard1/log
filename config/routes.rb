@@ -9,7 +9,10 @@ Log::Application.routes.draw do
   resources :users
   resources :assets
   resources :moves
-  
+
+  resources :task_lists do
+      resources :tasks
+  end      
   resources :asset_types do
     resources :assets
   end

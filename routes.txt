@@ -20,6 +20,22 @@
                       PATCH  /moves/:id(.:format)                                  moves#update
                       PUT    /moves/:id(.:format)                                  moves#update
                       DELETE /moves/:id(.:format)                                  moves#destroy
+      task_list_tasks GET    /task_lists/:task_list_id/tasks(.:format)             tasks#index
+                      POST   /task_lists/:task_list_id/tasks(.:format)             tasks#create
+   new_task_list_task GET    /task_lists/:task_list_id/tasks/new(.:format)         tasks#new
+  edit_task_list_task GET    /task_lists/:task_list_id/tasks/:id/edit(.:format)    tasks#edit
+       task_list_task GET    /task_lists/:task_list_id/tasks/:id(.:format)         tasks#show
+                      PATCH  /task_lists/:task_list_id/tasks/:id(.:format)         tasks#update
+                      PUT    /task_lists/:task_list_id/tasks/:id(.:format)         tasks#update
+                      DELETE /task_lists/:task_list_id/tasks/:id(.:format)         tasks#destroy
+           task_lists GET    /task_lists(.:format)                                 task_lists#index
+                      POST   /task_lists(.:format)                                 task_lists#create
+        new_task_list GET    /task_lists/new(.:format)                             task_lists#new
+       edit_task_list GET    /task_lists/:id/edit(.:format)                        task_lists#edit
+            task_list GET    /task_lists/:id(.:format)                             task_lists#show
+                      PATCH  /task_lists/:id(.:format)                             task_lists#update
+                      PUT    /task_lists/:id(.:format)                             task_lists#update
+                      DELETE /task_lists/:id(.:format)                             task_lists#destroy
     asset_type_assets GET    /asset_types/:asset_type_id/assets(.:format)          assets#index
                       POST   /asset_types/:asset_type_id/assets(.:format)          assets#create
  new_asset_type_asset GET    /asset_types/:asset_type_id/assets/new(.:format)      assets#new

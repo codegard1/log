@@ -4,47 +4,5 @@
   <h4>Welcome to the index!</h4>
   <hr>
 
-  <h4>Project Notes:</h4>
-  <ol>
-  <!-- USERS -->
-  <li>
-  <p><%= link_to 'Users', users_path %></p>
-  <p>Status: working / partially complete.</p>
-  </li>
-  <!-- MOVES -->
-  <li>
-  <p><%= link_to 'Moves', moves_path %></p>
-  <p>Status: working / partially complete.</p>
-  </li>
-  <!-- MOVE TYPES -->
-  <li>
-  <p><%= link_to 'Move Types', move_types_path %></p>
-  <p>Status: working / In Progress.</p>
-  </li>
-  <!-- ASSETS -->  
-  <li>
-  <p><%= link_to 'Assets', assets_path %></p>
-  <p>Status: working / partially complete.</p>
-  </li>
-  <!-- ASSET TYPES -->
-  <li>
-  <p><%= link_to 'Asset Types', asset_types_path %></p>
-  <p>Status: working / partially complete.</p></li>
-  </ol>
-</div>
-
-<!-- TO DO List -->
-<div>
-  <h4>To Do List / Wish List</h4>
-  <ol>
-    <li>Use buttons for actions instead of links</li>
-    <li>Apply CSS to site to make it look less shitty</li>
-    <li>Quick-entry form at welcome#index</li>
-    <li>validation for Assets and Users</li>
-    <li>No duplications! (check for dupes on new entry</li>
-    <li><em>done!</em> &nbsp; Make use of partials to reduce redundancy in views</li>
-    <li>Unified Color Scheme / Visual Theme </li>
-    <li><em>done!</em> &nbsp; universal navigation bars at top &amp; bottom </li>
-  </ol>
-</div>
-  
+  <%= render "project_notes" %>
+  <%= render "todo_list" %>
