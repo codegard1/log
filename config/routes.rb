@@ -6,10 +6,11 @@ Log::Application.routes.draw do
   get "moves/edit"
   get "moves/create"
   get "assets/new"
+  get "tasks/new"
   resources :users
   resources :assets
   resources :moves
-
+  resources :tasks
   resources :task_lists do
       resources :tasks
   end      

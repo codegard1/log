@@ -4,6 +4,7 @@
             moves_new GET    /moves/new(.:format)                                  moves#new
            moves_edit GET    /moves/edit(.:format)                                 moves#edit
          moves_create GET    /moves/create(.:format)                               moves#create
+            tasks_new GET    /tasks/new(.:format)                                  tasks#new
                 users GET    /users(.:format)                                      users#index
                       POST   /users(.:format)                                      users#create
              new_user GET    /users/new(.:format)                                  users#new
@@ -20,6 +21,14 @@
                       PATCH  /moves/:id(.:format)                                  moves#update
                       PUT    /moves/:id(.:format)                                  moves#update
                       DELETE /moves/:id(.:format)                                  moves#destroy
+                tasks GET    /tasks(.:format)                                      tasks#index
+                      POST   /tasks(.:format)                                      tasks#create
+             new_task GET    /tasks/new(.:format)                                  tasks#new
+            edit_task GET    /tasks/:id/edit(.:format)                             tasks#edit
+                 task GET    /tasks/:id(.:format)                                  tasks#show
+                      PATCH  /tasks/:id(.:format)                                  tasks#update
+                      PUT    /tasks/:id(.:format)                                  tasks#update
+                      DELETE /tasks/:id(.:format)                                  tasks#destroy
       task_list_tasks GET    /task_lists/:task_list_id/tasks(.:format)             tasks#index
                       POST   /task_lists/:task_list_id/tasks(.:format)             tasks#create
    new_task_list_task GET    /task_lists/:task_list_id/tasks/new(.:format)         tasks#new

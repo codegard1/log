@@ -1,2 +1,9 @@
 <%= render "shared/navigation_top" %>
-<h4>task_lists#index</h4>
+<h3>Task Lists</h3>
+<% if @task_lists then %>
+	<%= div_for @task_lists do |task_list| %>
+		<p><%= link_to task_list.title, task_list_path(task_list) %></p>
+	<% end %>
+	<%= @task_list_items.inspect %>
+<% end %>
+

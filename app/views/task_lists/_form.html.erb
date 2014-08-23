@@ -1,0 +1,19 @@
+<%= form_for @task_list do |f| %>
+
+	<!-- get title -->
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+
+	<!-- Get User id -->
+	User:<br>
+	<%= collection_select(
+                  :task_list, 
+                  :user_id, 
+                  User.all, 
+                  :id, 
+                  :name,
+	) %><br>
+ 
+  <%= f.submit %>
+<% end %>
+

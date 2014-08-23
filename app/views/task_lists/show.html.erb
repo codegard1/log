@@ -1,0 +1,9 @@
+<%= render "shared/navigation_top" %>
+<h3><%= @task_list.title %></h3>
+<% if @task_list_tasks then %>
+	<%= div_for(@task_list_tasks) do |task| %>
+		<ul><li><%= task.title %></ul>
+		<p style="margin-left:2.5em;"><%= User.find(task.user_id).name %></p>
+	<% end %>
+<% end %>
+<%= link_to 'New Task', new_task_list_task_path(@task_list) %>
