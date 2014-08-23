@@ -1,6 +1,7 @@
 class Asset < ActiveRecord::Base
   belongs_to :asset_type
   belongs_to :user
+  has_many :moves
   
   # method to return the asset tag & asset type together as a string
   def asset_tag_and_asset_type

@@ -13,4 +13,9 @@
     <li>Create an actual ToDo controller to track and modify this list, rather than use pure html<br>&nbsp;- in progress</li>
   </ol>
 </div>
- 
+<!-- Automatic List -->
+<ul>
+	<%= div_for @tasks do |task| %>
+		<li><%= task.title %></li>
+	<% end %></ul>
+<%= link_to 'New Task', "task_lists/1/tasks/new" %>

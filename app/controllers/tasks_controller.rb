@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 				:tasklist_id)
 		)
 		if @task.save
-			redirect_to task_list_path(params[:task_list_id])
+			redirect_to task_list_path(params[:tasklist_id]) 
 		end
 	end
 

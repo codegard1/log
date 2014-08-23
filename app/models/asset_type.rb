@@ -1,5 +1,6 @@
 class AssetType < ActiveRecord::Base
   has_many :assets
+  has_many :moves, through: :assets
   validates :title, presence: true
 end
 
