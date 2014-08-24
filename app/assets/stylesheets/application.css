@@ -11,3 +11,23 @@
  *= require_self
  *= require_tree .
  */
+
+div#navigation_top {
+	font-size: 14pt;
+	font-family: sans-serif;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	width: 100%;
+	margin: -10px 0px 10px -10px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+
+div#navigation_top a {
+	text-decoration: none;
+	color: #333;
+}
+
+div#navigation_top a:hover {
+	text-decoration: none;
+	color: blue;
+}

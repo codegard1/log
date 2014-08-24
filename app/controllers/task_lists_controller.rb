@@ -5,6 +5,7 @@ class TaskListsController < ApplicationController
 
 	def index
 		@task_lists = TaskList.all
+		@task_list_tasks = Task.all
 	end
 
 	def show

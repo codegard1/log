@@ -1,5 +1,26 @@
-ul li {
-	font-size: 14pt;
+
+div.task_list ul li, div.task_list ul li a {
+	margin-left: 3em;
+	font-size: 12pt;
 	font-family: sans-serif;
-	font-weight: bold;
+	font-weight: normal;
+	text-decoration: none;
+	color: #333;
+}
+div.task_list ul li a:hover {
+	text-decoration: underline;
+}
+div.task_list {
+	width: 100%;
+	border-bottom:1px solid #333;
+}
+
+div.task_list h4, div.task_list h4 a {
+	font-family: sans-serif;
+	font-size:16pt;
+	color:#333;
+	text-decoration:none;
+}
+div.task_list h4 a:hover {
+	text-decoration: underline;
 }

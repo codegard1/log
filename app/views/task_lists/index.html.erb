@@ -2,8 +2,16 @@
 <h3>Task Lists</h3>
 <% if @task_lists then %>
 	<%= div_for @task_lists do |task_list| %>
-		<p><%= link_to task_list.title, task_list_path(task_list) %></p>
+		<h4 style="margin-left:2em;"><%= link_to task_list.title, task_list_path(task_list) %></h4>
+		<% @tasks = Task.where :tasklist_id => task_list.id %>
+		<ul>
+			<%= div_for @tasks do |task| %>
+				<li><%= link_to task.title, task_path(task) %></li>
+			<% end %>
+		</ul>
+
 	<% end %>
-	<%= @task_list_items.inspect %>
 <% end %>
+
+<%= link_to 'New List', new_task_list_path %>
 
