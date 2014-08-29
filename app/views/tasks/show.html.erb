@@ -1,6 +1,7 @@
 <%= render "shared/navigation_top" %>
-<h3>Task#show</h3>
-
-<h4><%= @task.title %>&nbsp;</h4>
-<p>Complete: <%= @task.complete %>&nbsp;</p>
-<%= if @tasklist then @tasklist.inspect end %>
+	<h4><%= @task.title %>&nbsp;</h4>
+	<p><%= @task.completion_aspect %>&nbsp;</p>
+	<!-- delete button -->
+	<%= button_to "Delete", {action: "destroy", id: @task.id}, method: :delete, data: {confirm: "Are you sure?"} %>
+	<!-- Mark as complete button -->
+	<%= button_to "Mark Complete", {action: "update", id: @task.id}, method: :patch %>

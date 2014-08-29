@@ -23,11 +23,35 @@ class TasksController < ApplicationController
 	end
 
 	def show
-		@task = Task.find(params[:id])
+		@task = Task.find(params[:id]) 
 		@task_list = TaskList.find(@task.tasklist_id)
 	end
 
 	def edit
+		@task = Task.where( :id => params[:id] )
+	end
+
+	def destroy 
+		@task = Task.where(:id => params[:id]).first
+		@task_list = TaskList.where(:id => @task.tasklist_id).first
+		if @task.destroy
+			redirect_to task_list_path(@task_list)
+		end
+	end
+
+	def mark_complete
+		@task = Task.find(:id => params[:id]).first
+		@task_list = TaskList.where(:id => @task.tasklist_id).first
+		@task.complete = true
+		@task.completed_on = Time.now.strftime( "%m/%d/%y at %I:%M %p" )
+		if @task.save 
+			redirect_to task_list_path( @task_list )
+		end
+	end
+
+	def update
+		@task = Task.find(params[:id])
+		@task_list = TaskList.where(:id => @task.tasklist_id).first
 	end
 
 end

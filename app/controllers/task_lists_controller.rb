@@ -23,4 +23,8 @@ class TaskListsController < ApplicationController
 			redirect_to task_lists_path
 		end
 	end
+
+	def edit
+		@task_list = TaskList.find(params[:id])
+	end
 end
