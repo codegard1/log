@@ -1,7 +1,13 @@
 <!-- Automatic List -->
-<h3><%= @task_list.title %></h3>
-<ul>
-	<%= div_for @tasks do |task| %>
-		<li><%= task.title %></li>
-	<% end %></ul>
+<% if @task_list then %>
+	<h3><%= @task_list.title or 'No Default List' %></h3>
+	<% if @tasks.count > 0 then %>
+	<ul>
+		<%= div_for @tasks do |task| %>
+			<li><%= task.title %></li>
+		<% end %></ul>
+	<% end %>
 <%= link_to 'New Task', "task_lists/1/tasks/new" %>
+<% else %>
+	<h3>No Default Task List</h3>
+<% end %>
