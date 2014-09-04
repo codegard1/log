@@ -27,4 +27,14 @@ class TaskListsController < ApplicationController
 	def edit
 		@task_list = TaskList.find(params[:id])
 	end
+
+	def update
+		@task = Task.find(params[:id])
+		@task_list = TaskList.find(@task.tasklist_id)
+		if @task.update(params[:task].permit(:title))
+			redirect_to @task
+		else
+			render 'edit'
+		end
+	end
 end
