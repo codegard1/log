@@ -52,12 +52,26 @@ class TasksController < ApplicationController
 	def update
 		@task = Task.find(params[:id])
 		@task_list = TaskList.find(@task.tasklist_id)
+<<<<<<< HEAD
 
 		if @task.update( params[:task].permit( :complete, :completed_on ))
 			redirect_to @task_list
 		else
 			render 'edit'
 		end
+=======
+		if @task.update(params[:task].permit(:title))
+			redirect_to @task
+		else
+			render 'edit'
+		end
 	end
 
-end
+private
+	def post_params
+		params.require(:post).permit(:title, :text) 
+		# allows us to accept both text & title fields in this action
+>>>>>>> 858ea2fcb1c461f7bf45519ae07575852f2de2b8
+	end
+	
+
