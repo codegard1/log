@@ -20,7 +20,7 @@ class TaskListsController < ApplicationController
 				:user_id)
 		)
 		if @task_list.save 
-			redirect_to task_lists_path
+			redirect_to task_list_path @task_list.id
 		end
 	end
 

@@ -1,0 +1,14 @@
+div.task {
+	border-left: 1px solid #eee;
+	background-color: white;
+}
+div.task li {
+	margin-left: 1em;
+	padding-left: 5px;
+}
+div.task li.Completed {
+	border-left: 5px solid blue;
+}
+div.task li.Incomplete {
+	border-left: 5px solid red;
+}

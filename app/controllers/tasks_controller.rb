@@ -41,7 +41,7 @@ class TasksController < ApplicationController
 
 	def mark_complete
 		@task = Task.find(:id => params[:id]).first
-		@task_list = TaskList.where(:id => @task.tasklist_id).first
+		@task_list = TaskList.find(@task.tasklist_id)
 		@task.complete = true
 		@task.completed_on = Time.now.strftime( "%m/%d/%y at %I:%M %p" )
 		if @task.save 
@@ -51,7 +51,13 @@ class TasksController < ApplicationController
 
 	def update
 		@task = Task.find(params[:id])
-		@task_list = TaskList.where(:id => @task.tasklist_id).first
+		@task_list = TaskList.find(@task.tasklist_id)
+
+		if @task.update( params[:task].permit( :complete, :completed_on ))
+			redirect_to @task_list
+		else
+			render 'edit'
+		end
 	end
 
 end

@@ -24,3 +24,7 @@ div.task_list h4, div.task_list h4 a {
 div.task_list h4 a:hover {
 	text-decoration: underline;
 }
+div.task_list div.task li {
+	margin-left: 1em;
+	padding: 0px;
+}
