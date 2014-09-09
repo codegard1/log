@@ -3,5 +3,9 @@
 	<p><%= @task.completion_aspect %>&nbsp;</p>
 	<!-- delete button -->
 	<%= button_to "Delete", {action: "destroy", id: @task.id}, method: :delete, data: {confirm: "Are you sure?"} %>
-	<!-- Mark as complete button -->
-	<%= button_to "Mark Complete", {action: "update", id: @task.id}, method: :patch %>
+	<%= form_for @task do |f| %>
+		<%= f.hidden_field :completed_on, { :value => Time.now.strftime("%m %d %Y at %I:%M%p") } %>
+		<%= f.hidden_field :complete, { :value => true } %> 
+		<!-- Mark as complete button -->
+		<%= button_to "Mark Complete", {action: "update", id: @task.id}, method: :patch %>
+	<% end %>

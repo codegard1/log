@@ -54,7 +54,7 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		@task_list = TaskList.find(@task.tasklist_id)
 
-		if @task.update( params[:task].permit( :complete, :completed_on ))
+		if @task.update( params[:task].permit( :complete, :completed_on, :title ))
 			redirect_to @task_list
 		else
 			render 'edit'

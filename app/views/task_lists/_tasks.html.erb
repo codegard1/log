@@ -1,13 +1,20 @@
 <!-- render a color-coded div li for each task in the list --> 
+<% if @task_list_tasks.count > 0 then %>
 	<%= div_for(@task_list_tasks) do |task| %>
 		<ul>
 			<li class="<%= task.completion_aspect %>">
-				<%= link_to task.title, task_path(task) %>
-			</li>
 			<p style="margin-left:2.5em;">
-				<%= User.find(task.user_id).name %><br>
-				<%= task.completion_aspect %>
+				<%= link_to task.title, task_path(task) %> &nbsp;
+				(<%= User.find(task.user_id).name %>)<br>
+				<% #task.completion_aspect %>
 			</p>
+			</li>
 		</ul>
 	<% end %>
+<% else %>
+	<div>
+		<p style="margin-left:2.5em;">
+		<em>No Tasks</em></p>
+	</div>
+<% end %>
 
