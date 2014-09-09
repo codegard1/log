@@ -1,0 +1,13 @@
+<!-- render a color-coded div li for each task in the list --> 
+	<%= div_for(@task_list_tasks) do |task| %>
+		<ul>
+			<li class="<%= task.completion_aspect %>">
+				<%= link_to task.title, task_path(task) %>
+			</li>
+			<p style="margin-left:2.5em;">
+				<%= User.find(task.user_id).name %><br>
+				<%= task.completion_aspect %>
+			</p>
+		</ul>
+	<% end %>
+
