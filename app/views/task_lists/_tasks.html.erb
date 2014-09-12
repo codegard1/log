@@ -5,7 +5,7 @@
 			<li class="<%= task.completion_aspect %>">
 			<p style="margin-left:2.5em;">
 				<%= link_to task.title, task_path(task) %> &nbsp;
-				(<%= User.find(task.user_id).name %>)<br>
+				(<%= link_to(User.find(task.user_id).name, user_path(task.user_id)) %>)<br>
 				<% #task.completion_aspect %>
 			</p>
 			</li>

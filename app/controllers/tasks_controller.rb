@@ -29,11 +29,11 @@ class TasksController < ApplicationController
 	end
 
 	def edit
-		@task = Task.where( :id => params[:id] )
+		@task = Task.find(params[:id])
 	end
 
 	def destroy 
-		@task = Task.where(:id => params[:id]).first
+		@task = Task.find(params[:id])
 		@task_list = TaskList.where(:id => @task.tasklist_id).first
 		if @task.destroy
 			redirect_to task_list_path(@task_list)
@@ -41,7 +41,7 @@ class TasksController < ApplicationController
 	end
 
 	def mark_complete
-		@task = Task.find(:id => params[:id]).first
+		@task = Task.find(params[:id])
 		@task_list = TaskList.find(@task.tasklist_id)
 		@task.complete = true
 		@task.completed_on = Time.now.strftime( "%m/%d/%y at %I:%M %p" )
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		@task_list = TaskList.find(@task.tasklist_id)
 
-		if @task.update( params[:task].permit( :complete, :completed_on, :title ))
+		if @task.update( params[:task].permit( :complete, :completed_on, :title, :user_id ))
 			redirect_to @task_list
 		else
 			render 'edit'

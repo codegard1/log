@@ -9,3 +9,4 @@
 		<!-- Mark as complete button -->
 		<%= button_to "Mark Complete", {action: "update", id: @task.id}, method: :patch %>
 	<% end %>
+	<%= link_to "Edit", edit_task_path(@task) %>

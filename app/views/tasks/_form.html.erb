@@ -1,7 +1,9 @@
 <%= form_for @task do |f| %>
 	<!-- title, complete, completed_on, user_id, tasklist_id -->
 	<%= f.hidden_field :tasklist_id, {:value => params[:task_list_id]} %>
-	<%= f.hidden_field :complete, {:value => false} %>
+	<% unless @task.complete then %>
+		<%=f.hidden_field :complete, {:value => false} %>
+	<% end %>
 
 	<%= f.label :title %><br>
 	<%= f.text_field :title %><br>
@@ -14,5 +16,5 @@
 		:id,
 		:name) %><br>
 	<br>
-	<%= f.submit "Create" %>
+	<%= f.submit "Save" %>
 <% end %>

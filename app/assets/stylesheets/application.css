@@ -44,3 +44,10 @@ input, select {
   font-family: sans-serif;
   font-size: 12pt;
 }
+
+input#task_title, input#asset_title {
+	width: 300px;
+}
+select {
+	width: 200px;
+}

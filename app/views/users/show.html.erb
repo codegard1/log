@@ -14,8 +14,21 @@
 <% else %>
   <h2>No asset records found</h2>
 <% end %>
-
-<!-- footer links: Home, Users, New Asset for this User -->
 <span>
 	<%= link_to 'New Asset Record for '+@user.name, new_asset_path(:id => @user) %>
 </span>
+
+
+<!-- Print list of user-owned tasks -->
+<h3><span>
+    Tasks belonging to <%= @user.name %></span></h3>
+
+<% if @user_tasks.count >= 1 %>
+  <%= div_for(@user_tasks) do |user_task| %>
+        <span><em><%= user_task.title or "None" %></em></span><br>
+        <span><em><%= user_task.completion_aspect %></em></span>
+  <% end %>
+<% else %>
+  <h2>No tasks found</h2>
+<% end %>
+

@@ -18,5 +18,6 @@ class UsersController < ApplicationController
   def show
     @user = User.where(:id => params[:id]).first
     @user_assets = @user.assets.all
+    @user_tasks = @user.tasks.all
   end
 end
