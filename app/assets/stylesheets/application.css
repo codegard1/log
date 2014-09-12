@@ -11,6 +11,13 @@
  *= require_self
  *= require_tree .
  */
+body {
+  font-size: 12pt;
+}
+
+h3 {
+  font-size: 14pt
+}
 
 div#navigation_top {
 	font-size: 14pt;
@@ -30,4 +37,10 @@ div#navigation_top a {
 div#navigation_top a:hover {
 	text-decoration: none;
 	color: blue;
+}
+
+input, select {
+  padding: 5px;
+  font-family: sans-serif;
+  font-size: 12pt;
 }

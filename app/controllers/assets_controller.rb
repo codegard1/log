@@ -16,6 +16,23 @@ class AssetsController < ApplicationController
   end
   
   def show
-    @asset = Asset.where(:id => params[:id]).all
+    @asset = Asset.find(params[:id])
+  end
+  
+  def edit
+    @asset = Asset.find(params[:id])
+  end
+  
+  def update
+  	@asset = Asset.find(params[:id])
+    if @asset.update(params[:asset].permit( 
+                                            :title, 
+                                            :asset_type, 
+                                            :user, 
+                                            :asset_tag ))
+      redirect_to @asset
+  	else
+	  	render 'edit'
+    end
   end
 end

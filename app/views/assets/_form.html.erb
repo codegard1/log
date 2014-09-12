@@ -1,11 +1,11 @@
 <%= form_for @asset do |f| %>
 
 	<!-- get title -->
-	<%= f.label :title %>
-	<%= f.text_field :title %><br>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br><br>
 
 	<!-- Get AssetType id -->
-	Asset Type: <br>
+<%= f.label :asset_type %><br>
 	<%= collection_select(
                 :asset, 
                 :asset_type_id, 
@@ -13,22 +13,23 @@
                 :id, 
                 :title) 
 
-  %><br>
+  %><br><br>
 
   <!-- Get User id -->
-  User:<br>
+<%= f.label :user %><br>
 	<%= collection_select(
                   :asset, 
                   :user_id, 
                   User.all, 
                   :id, 
                   :name, 
-  ) %><br>
+  ) %><br><br>
 
   <!-- Enter Asset Tag -->
-  Asset Tag:<br>
-  <%= f.text_field :asset_tag %><br>
+<%= f.label :asset_tag %><br>
+  <%= f.text_field :asset_tag %><br><br>
   
   <%= f.submit %>
 <% end %>
 
+<p><%= link_to "Cancel", @asset %></p>

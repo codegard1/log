@@ -1,0 +1,23 @@
+<div class="asset">
+  <h3 class = "title">
+    <%= @asset.title or "None" %>
+  </h3>
+  <h4><%= @asset.asset_tag %></h4>
+
+  <p>
+    Type:&nbsp;
+     <strong>
+       <%= link_to(
+                    @asset.asset_type.title,
+                    asset_type_path(@asset.asset_type)) || "none" %>
+      </strong><br>
+    Owner:&nbsp;
+    <em>
+      <%= link_to(
+                    @asset.user.name,
+                    user_path(@asset.user)) %>
+    </em>
+  </p>
+</div>
+
+<p><%= link_to 'Edit', edit_asset_path(@asset) %></p>
