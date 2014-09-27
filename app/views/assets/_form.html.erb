@@ -1,12 +1,11 @@
 <%= form_for @asset do |f| %>
-<%= params.inspect %><br>
 
 	<!-- get title -->
 	<%= f.label :title %><br>
 	<%= f.text_field :title %><br><br>
 
 	<!-- Get AssetType id -->
-<%= f.label :asset_type %><br>
+	<%= f.label :asset_type %><br>
 	<%= collection_select(
                 :asset, 
                 :asset_type_id, 
@@ -23,7 +22,11 @@
                   :user_id, 
                   User.all, 
                   :id, 
-                  :name, 
+		  :name, 
+		  {
+			  :selected => (params[:user]||params[:id]||0) 
+		  }
+		  
   ) %><br><br>
 
   <!-- Enter Asset Tag -->

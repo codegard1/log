@@ -1,12 +1,18 @@
 <%= render "shared/navigation_top" %>
-	<h4><%= @task.title %>&nbsp;</h4>
-	<p><%= @task.completion_aspect %>&nbsp;</p>
-	<!-- delete button -->
-	<%= button_to "Delete", {action: "destroy", id: @task.id}, method: :delete, data: {confirm: "Are you sure?"} %>
+<p class="section_links">
+	<span class="section_title"><%= @task.title %></span>
+	&nbsp;|&nbsp;&nbsp;
+	(<%= @task.completion_aspect %>)&nbsp;
+	<%= link_to "Edit", edit_task_path(@task) %>
+</p>
+
+	<!-- Mark as complete button -->
 	<%= form_for @task do |f| %>
-		<%= f.hidden_field :completed_on, { :value => Time.now.strftime("%m %d %Y at %I:%M%p") } %>
+		<%= f.hidden_field :completed_on, { :value => Time.now } %>
 		<%= f.hidden_field :complete, { :value => true } %> 
-		<!-- Mark as complete button -->
+		<%= f.hidden_field :user_id, { :value => @task.user_id} %> 
 		<%= button_to "Mark Complete", {action: "update", id: @task.id}, method: :patch %>
 	<% end %>
-	<%= link_to "Edit", edit_task_path(@task) %>
+	<!-- delete button -->
+	<%= button_to "Delete", {action: "destroy", id: @task.id}, method: :delete, data: {confirm: "Are you sure?"} %>
+

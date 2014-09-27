@@ -10,7 +10,12 @@ class TaskListsController < ApplicationController
 
 	def show
 		@task_list = TaskList.find(params[:id])
-		@task_list_tasks = Task.where(:tasklist_id => params[:id])
+		# unless specified with params[:complete], only show uncomplete tasks
+		params[:complete]? 
+			(@task_list_tasks = Task.where(:tasklist_id => params[:id])) : 
+			(@task_list_tasks = Task.where(:tasklist_id => params[:id], :complete => false))
+		# sort tasks by most recent or (in a future version) another way depending on user input	
+		@task_list_tasks = @task_list_tasks.order(created_at: :desc)
 	end
 
 	def create
@@ -29,10 +34,9 @@ class TaskListsController < ApplicationController
 	end
 
 	def update
-		@task = Task.find(params[:id])
-		@task_list = TaskList.find(@task.tasklist_id)
-		if @task.update(params[:task].permit(:title))
-			redirect_to @task
+		@task_list = TaskList.find(params[:id])
+		if @task_list.update(params[:task_list].permit(:title))
+			redirect_to @task_list
 		else
 			render 'edit'
 		end

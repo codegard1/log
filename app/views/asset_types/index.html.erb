@@ -1,5 +1,12 @@
 <%= render 'shared/navigation_top' %>
-<h3>Asset Types</h3>
+<p class="section_links">
+<span class="section_title">Asset Types</span>
+&nbsp;|&nbsp;&nbsp;
+<%= link_to "New Type", new_asset_type_path %> &nbsp; 
+<%= link_to "New Asset", new_asset_path %> &nbsp;
+</p>
+
+
 <!-- show all AssetType -->
 <blockquote>
 	<%= div_for(@asset_types) do |asset_type| %>
@@ -9,6 +16,4 @@
 	<% end %>    
 </blockquote>
 
-<%= link_to "New Type", new_asset_type_path %> &nbsp; 
-<%= link_to "New Asset", new_asset_path %> &nbsp;
 

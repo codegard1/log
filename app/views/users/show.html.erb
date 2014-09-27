@@ -1,8 +1,8 @@
 <%= render "shared/navigation_top" %>
 
 <!-- print user name -->
-<h3><span>
-    Assets belonging to <%= @user.name %></span></h3>
+<h4><span>
+    Assets belonging to <%= @user.name %></span></h4>
 
 <!-- Print ordered list of user asset records -->
 <% if @user_assets.count >= 1 %>
@@ -20,15 +20,5 @@
 
 
 <!-- Print list of user-owned tasks -->
-<h3><span>
-    Tasks belonging to <%= @user.name %></span></h3>
 
-<% if @user_tasks.count >= 1 %>
-  <%= div_for(@user_tasks) do |user_task| %>
-        <span><em><%= user_task.title or "None" %></em></span><br>
-        <span><em><%= user_task.completion_aspect %></em></span>
-  <% end %>
-<% else %>
-  <h2>No tasks found</h2>
-<% end %>
-
+<%= render "users/tasks" %>

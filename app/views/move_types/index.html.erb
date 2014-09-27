@@ -1,7 +1,10 @@
 <%= render "shared/navigation_top" %>
-<h3>Move Types</h3>
-
-<!-- print status message -->
+<p class="section_links">
+	<span class="section_title">Move Types</span>
+	&nbsp;|&nbsp;&nbsp;
+	<%= link_to 'New Type', move_types_new_path %> &nbsp;
+	<%= link_to 'New Move', moves_new_path %> &nbsp;
+</p>
 
 <!-- Print an array of MoveType objects -->
 <blockquote>
@@ -9,8 +12,3 @@
 		<%= link_to move_type.title, move_type_path(move_type) %>
 	<% end %>
 </blockquote>
-<!-- Navigation -->
-<div id="bottom_nav">
-	<%= link_to 'New Move', moves_new_path %> &nbsp;
-	<%= link_to 'New Move Type', move_types_new_path %> &nbsp;
-</div>

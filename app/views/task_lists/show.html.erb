@@ -1,6 +1,15 @@
 <%= render "shared/navigation_top" %>
-<h3><%= @task_list.title %></h3>
-<% if @task_list_tasks then %>
-	<%= render "tasks" %>
-<% end %>
-<%= link_to 'New Task', new_task_list_task_path(@task_list) %>
+<p class="section_links">
+	<span class="section_title"><%= @task_list.title %></span>
+	<%= render "shared/spacer" %>
+	<%= link_to 'New Task', new_task_list_task_path(@task_list) %>&nbsp;
+	<%= link_to 'Edit', edit_task_list_path %>&nbsp;
+	<%= if params[:complete] then link_to 'Hide Complete',@task_list end %>
+		<%= if !params[:complete] then link_to 'Show Completed', task_list_path(@task_list.id, :complete => true) end %>	&nbsp;
+		<%= 'Sort ASC' %>&nbsp;
+		<%= 'Sort DESC' %>&nbsp;
+		<%= 'Delete List' %>&nbsp;
+</p>
+
+<!-- render the tasks in this list, taking into account the 'complete' flag.
+<%= render "tasks" %>

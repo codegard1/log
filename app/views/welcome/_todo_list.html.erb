@@ -1,6 +1,6 @@
 <!-- Automatic List -->
 <% if @task_list then %>
-	<h3><%= @task_list.title or 'No Default List' %></h3>
+	<h3><%= link_to @task_list.title, task_list_path(@task_list) %></h3>
 	<% if @tasks.count > 0 then %>
 	<ul>
 		<%= div_for @tasks do |task| %>
@@ -11,3 +11,4 @@
 <% else %>
 	<h3>No Default Task List</h3>
 <% end %>
+<p><a href="https://github.com/codegard1/log/issues">View Issues on Github</a></p>

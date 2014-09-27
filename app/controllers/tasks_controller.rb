@@ -40,16 +40,6 @@ class TasksController < ApplicationController
 		end
 	end
 
-	def mark_complete
-		@task = Task.find(params[:id])
-		@task_list = TaskList.find(@task.tasklist_id)
-		@task.complete = true
-		@task.completed_on = Time.now.strftime( "%m/%d/%y at %I:%M %p" )
-		if @task.save 
-			redirect_to task_list_path( @task_list )
-		end
-	end
-
 	def update
 		@task = Task.find(params[:id])
 		@task_list = TaskList.find(@task.tasklist_id)

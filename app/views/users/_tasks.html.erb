@@ -1,0 +1,19 @@
+<h4>Tasks for <%= @user.name %>
+<!-- render a color-coded div li for each task in the list --> 
+<% if @user_tasks.count > 0 then %>
+	<%= div_for(@user_tasks) do |task| %>
+		<ul>
+			<li class="<%= task.completion_aspect %>">
+			<p style="margin-left:2.5em;">
+				<%= link_to task.title, task_path(task) %>
+			</p>
+			</li>
+		</ul>
+	<% end %>
+<% else %>
+	<div>
+		<p style="margin-left:2.5em;">
+		<em>No Tasks</em></p>
+	</div>
+<% end %>
+

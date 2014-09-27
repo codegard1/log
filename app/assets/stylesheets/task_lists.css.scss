@@ -1,6 +1,6 @@
-
+/* styles for task list items */
 div.task_list ul li, div.task_list ul li a {
-	margin-left: 3em;
+	margin-left: 1em;
 	font-size: 12pt;
 	font-family: sans-serif;
 	font-weight: normal;
@@ -24,7 +24,7 @@ div.task_list h4, div.task_list h4 a {
 div.task_list h4 a:hover {
 	text-decoration: underline;
 }
-div.task_list div.task li {
+/*div.task_list div.task li {
 	margin-left: 1em;
 	padding: 0px;
-}
+}*/

@@ -12,37 +12,38 @@
  *= require_tree .
  */
 body {
-  font-size: 12pt;
+  font: normal 11pt Arial, sans-serif;
 }
 
-h3 {
-  font-size: 14pt
+span.section_title {
+  font: bold 18pt Georgia, serif ;
+  
 }
 
 div#navigation_top {
-	font-size: 14pt;
-	font-family: sans-serif;
+	font: normal 14pt Arial, sans-serif;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 	width: 100%;
 	margin: -10px 0px 10px -10px;
 	padding: 5px;
 	border-bottom: 1px solid black;
 }
+p.section_links {
+	font: normal 11pt Arial, sans-serif;
+}
 
-div#navigation_top a {
+div#navigation_top a, p.section_links a {
 	text-decoration: none;
 	color: #333;
 }
 
-div#navigation_top a:hover {
+div#navigation_top a:hover, p.section_links a:hover {
 	text-decoration: none;
 	color: blue;
 }
 
 input, select {
   padding: 5px;
-  font-family: sans-serif;
-  font-size: 12pt;
 }
 
 input#task_title, input#asset_title {
