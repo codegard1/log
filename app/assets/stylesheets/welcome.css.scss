@@ -1,11 +1,13 @@
 table {
 	display: block;
 	width: 800px;
+
+	td {
+		display: table-cell;
+  		vertical-align: top; 
+	}
 }
-table td {
-	display: table-cell;
-  	vertical-align: top; 
-}
+
 a {
 	font: normal 14pt Arial, sans-serif;
 	text-decoration: none;
