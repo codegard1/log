@@ -2,7 +2,8 @@
 <p class="section_links">
 <span class="section_title">Task Lists</span>
 &nbsp;|&nbsp;&nbsp;
-<%= link_to 'New List', {action: "new", method: :show } %>
+<%= link_to 'New List', {action: "new", method: :show } %>&nbsp;
+<%= link_to 'New Task', new_task_path %>
 </p>
 
 <% if @task_lists then %>

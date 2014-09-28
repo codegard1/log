@@ -32,6 +32,11 @@ p.section_links {
 	font: normal 11pt Arial, sans-serif;
 }
 
+p.section_links a {
+	padding-right: 5px;
+	border-right: 1px dotted black;
+}
+
 div#navigation_top a, p.section_links a {
 	text-decoration: none;
 	color: #333;

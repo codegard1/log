@@ -19,4 +19,7 @@ class MovesController < ApplicationController
   def index
   	@moves = Move.all.sort_by! &:created_at
   end
+
+  def show
+  end
 end

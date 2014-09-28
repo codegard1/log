@@ -5,11 +5,10 @@
 div.move_type {
 	border: 1px solid #eee;
 	padding: 1px;
-	width: auto;
-	height: auto;
 	margin-top: .5em;
 	margin-bottom: .5em;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	max-width: 400px;
+	/*box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);*/
 	font-size: 14pt;
 	border-radius:3px;
 

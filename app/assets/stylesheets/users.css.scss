@@ -4,11 +4,12 @@
 div.user {
 	border: 1px solid #eee;
 	padding: 1em;
-	width: auto;
+	max-width: 400px;
 	height: auto;
 	margin-top: .5em;
 	margin-bottom: .5em;
+	margin-left: 2.5em;
 	background-color: white;
-	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+/*	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);*/
 	border-radius: 3px
 }
