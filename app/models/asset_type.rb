@@ -1,12 +1,7 @@
 class AssetType < ActiveRecord::Base
   has_many :assets
   has_many :moves, through: :assets
-  validates :title, presence: true
+
+  validates :title, presence: true, length: {in: 1..64}
 end
 
-#    create_table "asset_types", force: true do |t|
-#    t.string   "title"
-#    t.string   "group"
-#    t.datetime "created_at"
-#    t.datetime "updated_at"
-#  end

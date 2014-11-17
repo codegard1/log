@@ -1,20 +1,14 @@
-<%= form_for @task do |f| %>
+<%= simple_form_for @task do |f| %>
 	<!-- title, complete, completed_on, user_id, tasklist_id -->
 	<%= f.hidden_field :tasklist_id, {:value => params[:task_list_id]} %>
-	<% unless @task.complete then %>
-		<%=f.hidden_field :complete, {:value => false} %>
+	<% unless @task.complete %>
+		<%= f.hidden_field :complete, {:value => false} %>
 	<% end %>
 
-	<%= f.label :title %><br>
-	<%= f.text_field :title %><br>
+    <%= f.input :title %>
 	<br>
-	<%= f.label "Owner" %><br>
-	<%= collection_select(
-		:task,
-		:user_id,
-		User.all,
-		:id,
-		:name) %><br>
+    <!-- 11/16/14 Converted to simple_form syntax -->
+	<%= f.input :user,  collection: User.all %>
 	<br>
-	<%= f.submit "Save" %>
+	<%= f.button :submit, label: "Save" %>
 <% end %>

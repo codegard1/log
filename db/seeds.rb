@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+default_tasklist = TaskList.create(title:'Default Tasklist',user_id:1)
+users = User.create([{name:'Chris'}, {name:'Annie'}, {name:'Stephanie'}, {name:'Charlotte'},{name:'Foxy'}])
+

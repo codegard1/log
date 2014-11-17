@@ -1,27 +1,27 @@
 <!-- render a color-coded div li for each task in the list --> 
 <div class="task_list">
 	<!-- check for the presence of tasks in this list -->
-	<% if @task_list_tasks.count > 0 then %>
+	<% if @task_list_tasks.count > 0  %>
 		<!-- if incomplete items are shown also, print them at the bottom --> 
 		<%= div_for(@task_list_tasks) do |task| %>
-			<% if !task.complete then %>
+			<% unless task.complete  %>
 			<ul>
 				<li class="<%= task.completion_aspect %>">
 				<p style="margin-left:2.5em;">
 					<%= link_to task.title, task_path(task) %> &nbsp;
-					(<%= link_to(User.find(task.user_id).name, user_path(task.user_id)) %>)
+					(<%= link_to task.user.name, user_path(task.user) %>)
 				</p>
 				</li>
 			</ul>
 			<% end %>
 		<% end %>
 		<%= div_for(@task_list_tasks) do |task| %>
-			<% if task.complete then %>
+			<% if task.complete %>
 			<ul>
 				<li class="<%= task.completion_aspect %>">
 				<p style="margin-left:2.5em;">
 					<%= link_to task.title, task_path(task) %> &nbsp;
-					(<%= link_to(User.find(task.user_id).name, user_path(task.user_id)) %>
+					(<%= link_to(task.user.name, user_path(task.user)) %>
 					<%= ',  completed on '+task.completed_on.strftime("%m-%d-%Y") %>)
 				</p>
 				</li>
