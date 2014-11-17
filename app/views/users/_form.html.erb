@@ -1,11 +1,6 @@
-<%= form_for @user do |f| %>
-
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  
-  <%= f.label :phone %><br>
-  <%= f.text_field :phone %>
-
-  <%= f.submit %>
-
+<!-- 11/16/14 - rewrote this form using simple_form -->
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name, label: 'username' %><br>
+  <%= f.input :phone %><br>
+  <%= f.button :submit %>
 <% end %>
