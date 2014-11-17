@@ -1,11 +1,8 @@
-<%= form_for @asset_type do |f| %>
-
-<%= f.label :title %><br>
-<%= f.text_field :title %><br>
-
-<%= f.label :group %><br>
-<%= f.text_field :group %><br>
-
-<%= f.submit %>
-
+<!-- 11/16/14 Changed to simple_form syntax -->
+<%= simple_form_for @asset_type do |f| %>
+    <%= f.input :title %>
+    <br>
+    <%= f.input :group %>
+    <br>
+    <%= f.submit 'Save' %>
 <% end %>

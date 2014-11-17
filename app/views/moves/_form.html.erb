@@ -1,48 +1,17 @@
-<%= form_for @move do |f| %>
-
+<!-- 11/16/14 changed to simple_form syntax
+<%= simple_form_for @move do |f| %>
 	<!-- text field for description -->
-	<%= f.label :description %><br>
-	<%= f.text_area :description %><br>
-
+	<%= f.input :description, as: :text %>
+    <br>
 	<!-- selection field for User -->
-  	User:<br>
-	<%= collection_select(
-				  :move, 
-					:user_id, 
-					User.all, 
-					:id, 
-					:name, 
-					:prompt => true
-	) %><br>
-
+  	<%= f.input :user_id, collection: User.all, :value_method => :id, :prompt => true %>
+    <br>
 	<!-- Selection field for Move Type -->
-	Move Type:<br>
-	<%= collection_select(
-					:move,
-					:move_type_id,
-          MoveType.all,
-					:id,
-					:title,
-					:prompt => true
-	) %><br>
-
-
+	<%= f.input :move_type_id, collection: MoveType.all, :value_method => :id, :prompt => true %>
+    <br>
 	<!-- Selection field for existing Assets-->
 	Select Existing Asset:<br>
-	<%= collection_select(
-					:move,
-					:asset_id,
-					@assets,
-          :id,
-          :asset_tag_and_asset_type,
-          :prompt => true
-	) %><br>
-
-	<!-- Print new asset partial 
-  	Create New Asset for This Move:<br>
--->
-  <br><br>
-	<%= f.submit  %>
+    <%= f.input :asset_id, collection: Asset.all, :value_method => :id, :prompt => true %>
+    <br>
+	<%= f.button :submit  %>
 <% end %>
-
-

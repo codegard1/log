@@ -1,39 +1,14 @@
-<%= form_for @asset do |f| %>
-
-	<!-- get title -->
-	<%= f.label :title %><br>
-	<%= f.text_field :title %><br><br>
-
-	<!-- Get AssetType id -->
-	<%= f.label :asset_type %><br>
-	<%= collection_select(
-                :asset, 
-                :asset_type_id, 
-                AssetType.all, 
-                :id, 
-                :title) 
-
-  %><br><br>
-
-  <!-- Get User id -->
-<%= f.label :user %><br>
-	<%= collection_select(
-                  :asset, 
-                  :user_id, 
-                  User.all, 
-                  :id, 
-		  :name, 
-		  {
-			  :selected => (params[:user]||params[:id]||0) 
-		  }
-		  
-  ) %><br><br>
-
-  <!-- Enter Asset Tag -->
-<%= f.label :asset_tag %><br>
-  <%= f.text_field :asset_tag %><br><br>
-  
-  <%= f.submit %>
+<!-- 11/16/14 Changed to simple_form syntax -->
+<%= simple_form_for @asset do |f| %>
+	<%= f.input :title %>
+    <br>
+	<%= f.input :asset_type_id, collection: AssetType.all, :prompt => true %>
+    <br>
+    <%= f.input :user_id, collection: User.all, :label_method => :name, :selected => (params[:user]||params[:id]||0)  %>
+    <br>
+    <%= f.input :asset_tag %>
+    <br>
+    <%= f.button :submit %>
 <% end %>
 
 <p><%= link_to "Cancel", @asset %></p>

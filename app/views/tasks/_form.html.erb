@@ -1,14 +1,11 @@
+<!-- 11/16/14 Converted to simple_form syntax -->
 <%= simple_form_for @task do |f| %>
-	<!-- title, complete, completed_on, user_id, tasklist_id -->
-	<%= f.hidden_field :tasklist_id, {:value => params[:task_list_id]} %>
+	<%= f.hidden_field :tasklist_id, {:value => (params[:task_list_id] || 1)} %>
 	<% unless @task.complete %>
 		<%= f.hidden_field :complete, {:value => false} %>
 	<% end %>
 
     <%= f.input :title %>
-	<br>
-    <!-- 11/16/14 Converted to simple_form syntax -->
-	<%= f.input :user,  collection: User.all %>
-	<br>
-	<%= f.button :submit, label: "Save" %>
+	<%= f.input :user_id,  collection: User.all, :prompt => true %>
+	<%= f.submit 'Save' %>
 <% end %>

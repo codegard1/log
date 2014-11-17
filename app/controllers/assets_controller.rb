@@ -4,9 +4,16 @@ class AssetsController < ApplicationController
   end
   
   def create
-    @asset = Asset.create(params[:asset].permit(:title,:asset_type_id,:user_id, :asset_tag))
+    @asset = Asset.create(
+        params[:asset].permit(
+            :title,
+            :asset_type_id,
+            :user_id,
+            :asset_tag))
     if @asset.save 
       redirect_to assets_path
+    else
+      render 'assets/new'
     end
   end
   
@@ -26,8 +33,8 @@ class AssetsController < ApplicationController
   	@asset = Asset.find(params[:id])
     if @asset.update(params[:asset].permit( 
                                             :title, 
-                                            :asset_type, 
-                                            :user, 
+                                            :asset_type_id,
+                                            :user_id,
                                             :asset_tag ))
       redirect_to @asset
   	else

@@ -4,6 +4,7 @@ class MoveTypesController < ApplicationController
   end
 
   def edit
+    @move_type = MoveType.find params[:id]
   end
   
   def create
@@ -11,7 +12,9 @@ class MoveTypesController < ApplicationController
   	if @move_type.save
   		@status_message = 'Move type ' + @move_type.title + ' saved successfully!'
   		redirect_to move_types_path
-  	end
+    else
+      render 'edit'
+    end
   end
   
   def index
@@ -19,5 +22,6 @@ class MoveTypesController < ApplicationController
   end
 
   def show
+    redirect_to move_types_path
   end  
 end

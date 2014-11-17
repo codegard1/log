@@ -1,9 +1,6 @@
-<%= form_for @task_list do |f| %>
-
-	<!-- get title -->
-	<%= f.label :title %><br>
-	<%= f.text_field :title %><br>
-
-  	<%= f.submit %>
+<!-- 11/16/2014 changed to simple_form syntax -->
+<%= simple_form_for @task_list do |f| %>
+	<%= f.input :title %>
+  	<%= f.submit 'Save' %>
 <% end %>
 

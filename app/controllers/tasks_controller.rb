@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
 	def new
 		@task = Task.new
-		@task_list = TaskList.find(params[:task_list_id])
+		@task_list = TaskList.find(params[:task_list_id] || 1) #if a tasklist_id is not supplied then go to the default list
 	end
 
 	def create
