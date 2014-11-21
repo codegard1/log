@@ -1,15 +1,41 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-div.user {
-	border: 1px solid #eee;
-	padding: 1em;
-	max-width: 400px;
-	height: auto;
-	margin-top: .5em;
-	margin-bottom: .5em;
-	margin-left: 2.5em;
-	background-color: white;
-/*	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);*/
-	border-radius: 3px
+table#users {
+  border: 5px solid #333;
+  padding: 1em;
+  width: 800px;
+  height: auto;
+  /* margin-top: .5em; */
+  margin-bottom: .5em;
+  margin-left: 2.5em;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+/* Rows are 100% */
+table#users tr {
+  width: 100%;
+}
+
+/* tds are 33% because there are 3 in a row. */
+/* remember to change this if pagination changes! */
+table#users tr td {
+  width: 400px;
+  min-height: 2em;
+}
+
+table#users tr td span {
+  font: "Helvetica Neue", Arial, "Lucida Grande", sans-serif 13pt normal;
+}
+
+table#users a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+table#users a:hover {
+  text-decoration: underline;
+  text-decoration-color: blue;
 }

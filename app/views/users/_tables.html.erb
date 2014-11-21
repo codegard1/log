@@ -1,21 +1,57 @@
-<table border="1" width="100%">
+<table id="users" border="1">
   <!-- First row -->
-  <tr width="100%">
-    <% @users[0..2].each do |user| %>
-        <td align="center">
-          <%= user.name %>
+  <tr>
+    <% @users[0..4].each do |user| %>
+        <td align="center" id="<%= user.id %>">
+          <span class="user_<%= user.id %>">
+            <%= link_to user.name, user_path(user) %>
+          </span>
           <br>
-          <%= user.phone or 'None' %>
+          <span class="user_<%= user.id %>">
+            <%= user.phone or 'None' %>
+          </span>
         </td>
     <% end %>
   </tr>
   <!-- Second Row -->
-  <tr width="100%">
-    <% @users[3..5].each do |user| %>
-        <td align="center">
-          <%= user.name %>
+  <tr>
+    <% @users[5..9].each do |user| %>
+        <td align="center" id="<%= user.id %>">
+          <span class="user_<%= user.id %>">
+            <%= link_to user.name, user_path(user) %>
+          </span>
           <br>
-          <%= user.phone or 'None' %>
+          <span class="user_<%= user.id %>">
+            <%= user.phone or 'None' %>
+          </span>
+        </td>
+    <% end %>
+  </tr>
+  <!-- Third row -->
+  <tr>
+    <% @users[10..14].each do |user| %>
+        <td align="center" id="<%= user.id %>">
+          <span class="user_<%= user.id %>">
+            <%= link_to user.name, user_path(user) %>
+          </span>
+          <br>
+          <span class="user_<%= user.id %>">
+            <%= user.phone or 'None' %>
+          </span>
+        </td>
+    <% end %>
+  </tr>
+  <!-- Fourth Row -->
+  <tr>
+    <% @users[15..20].each do |user| %>
+        <td align="center" id="<%= user.id %>">
+          <span class="user_<%= user.id %>">
+            <%= link_to user.name, user_path(user) %>
+          </span>
+          <br>
+          <span class="user_<%= user.id %>">
+            <%= user.phone or 'None' %>
+          </span>
         </td>
     <% end %>
   </tr>

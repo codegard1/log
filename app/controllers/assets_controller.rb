@@ -18,7 +18,8 @@ class AssetsController < ApplicationController
   end
   
   def index
-    @assets = Asset.all
+    #@assets = Asset.all
+    @assets = Asset.all.paginate(:page => params[:page], :per_page => 20)
   end
   
   def show

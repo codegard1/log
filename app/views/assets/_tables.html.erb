@@ -1,0 +1,16 @@
+<table id="assets" border="1">
+  <!-- First row -->
+  <tr>
+    <% @assets.each do |asset| %>
+        <td align="center" id="<%= asset.id %>">
+          <span class="asset_<%= asset.id %>">
+            <%= link_to asset.title, asset_path(asset) %>
+          </span>
+          <br>
+          <span class="asset_<%= asset.id %>">
+            <%= asset.asset_type.title or 'None' %>
+          </span>
+        </td>
+    <% end %>
+  </tr>
+</table>
