@@ -6,6 +6,36 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-default_tasklist = TaskList.create(title:'Default Tasklist',user_id:1)
-users = User.create([{name:'Chris'}, {name:'Annie'}, {name:'Stephanie'}, {name:'Charlotte'},{name:'Foxy'}])
+default_tasklist = TaskList.create(title: 'Default Tasklist', user_id: 1)
 
+users = User.create([
+                        {name: 'Langdon'},
+                        {name: 'Raphael'},
+                        {name: 'Marco'},
+                        {name: 'Eduardo'},
+                        {name: 'Samantha'},
+                        {name: 'Phillip'},
+                        {name: 'Sean'},
+                        {name: 'Larry'},
+                        {name: 'Reginald'},
+                        {name: 'Stuart'},
+                        {name: 'Nick`'},
+                        {name: 'Wendell'},
+                        {name: 'Franklin'},
+                        {name: 'Daniel'},
+                        {name: 'Taylor'},
+                        {name: 'Mohammed'},
+                        {name: 'Arthur'},
+                        {name: 'Zebulon'},
+                        {name: 'Benjamin'},
+                        {name: 'Tucker'},
+                        {name: 'Spencer'},
+                        {name: 'Hunter'},
+                        {name: 'Roger'},
+                        {name: 'Alan'},
+                        {name: 'Noah'},
+                        {name: 'Chris'},
+                        {name: 'Annie'},
+                        {name: 'Stephanie'},
+                        {name: 'Charlotte'},
+                        {name: 'Foxy'}])

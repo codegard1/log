@@ -1,0 +1,17 @@
+<%= div_for(@users) do |user| %>
+    <span>
+      <strong><%= link_to user.name, user_path(user) %></strong>
+    </span>
+    <br>
+    <span>
+      Phone: <strong><%= user.phone or 'None' %></strong>
+    </span>
+    <br>
+    <span>
+      Assets owned: <strong><%= user.assets.count %></strong>
+    </span>
+    <br>
+    <br>
+    <%= link_to 'New asset', new_asset_path(user) %>&nbsp;
+    <%= link_to 'New Move', new_move_path(user) %>&nbsp;
+<% end %>

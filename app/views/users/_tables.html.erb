@@ -1,0 +1,22 @@
+<table border="1" width="100%">
+  <!-- First row -->
+  <tr width="100%">
+    <% @users[0..2].each do |user| %>
+        <td align="center">
+          <%= user.name %>
+          <br>
+          <%= user.phone or 'None' %>
+        </td>
+    <% end %>
+  </tr>
+  <!-- Second Row -->
+  <tr width="100%">
+    <% @users[3..5].each do |user| %>
+        <td align="center">
+          <%= user.name %>
+          <br>
+          <%= user.phone or 'None' %>
+        </td>
+    <% end %>
+  </tr>
+</table>

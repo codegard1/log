@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # CUSTOM GEMS for testing purposes
 gem 'simple_form'
+gem 'will_paginate', '~> 3.0.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'

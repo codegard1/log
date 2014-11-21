@@ -7,12 +7,5 @@
 	<%= link_to 'New User', new_user_path %> &nbsp;
 </p>
 
-<%= div_for(@users) do |user| %>
-    <span><strong> <%= link_to user.name, user_path(user) %></strong><br>
-    <span>Phone:<strong> <%= user.phone %></strong></span><br>
-    <span>Assets owned:<strong> <%= user.assets.count %></strong></span><br>
-    <!-- link to new asset should pass user ID as well -->
-    <br>
-    <%= link_to 'New asset', new_asset_path(:user => user.id) %>&nbsp;
-    <%= link_to 'New Move', new_move_path(:user => user.id) %>&nbsp;
-<% end %>
+<%= render 'tables' %>
+<%= render 'pagination' %>
