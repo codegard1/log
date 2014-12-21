@@ -8,6 +8,9 @@
 
 default_tasklist = TaskList.create(title: 'Default Tasklist', user_id: 1)
 
+tasks = Task.create([
+			{title: 'to do no. 1', complete: 'False', user_id: 1, tasklist_id: 1}
+			])
 users = User.create([
                         {name: 'Langdon'},
                         {name: 'Raphael'},
