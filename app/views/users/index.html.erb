@@ -7,5 +7,7 @@
 	<%= link_to 'New User', new_user_path %> &nbsp;
 </p>
 
-<%= render 'tables' %>
+<%= div_for @users, class: 'user'  do |user| %>
+	<%= link_to user.name, users_path(user) %>
+<% end %>
 <%= render 'pagination' %>
