@@ -20,7 +20,6 @@ Log::Application.routes.draw do
   resources :move_types do
     resources :moves
   end
-  #assettype.asset.create
   
   root 'welcome#index'
 

@@ -8,7 +8,7 @@
 
 <!-- show all AssetType -->
 <% if @asset_types.count > 0 %>
-	<%= div_for(@asset_types, class:'asset_type') do |asset_type| %>
+	<%= div_for(@asset_types, class: 'asset_type') do |asset_type| %>
 		<span>
 			<strong><%= link_to asset_type.title, asset_type_path(asset_type.id) %></strong> &nbsp;
 			(<em><%= asset_type.group %></em>)

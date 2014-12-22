@@ -6,7 +6,7 @@
 </p>
 
 <% if @task_lists.count > 0 %>
-	<%= div_for @task_lists do |task_list| %>
+	<%= div_for(@task_lists, class: 'task_list') do |task_list| %>
 		<h4 style="margin-left:1em;margin-bottom:5px;"><%= link_to task_list.title, task_list_path(task_list) %></h4>
 		<% @task_list_tasks = @tasks.where(
 						:tasklist_id => task_list.id, 

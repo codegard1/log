@@ -7,7 +7,7 @@
 
 <!-- Show All Moves -->
 <% if @moves.count > 0 %>
-	<%= div_for(@moves, class: ‘move') do |move| %>
+	<%= div_for(@moves, class: 'move') do |move| %>
 		<p class="date_created"> &nbsp; 
 			<%= Time.at(move.created_at.to_i).to_date.inspect %></p>
 		<p class="description">&nbsp; 
