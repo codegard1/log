@@ -1,8 +1,6 @@
-<%= render "shared/navigation_top" %>
 <!-- Show all users -->
 <p class="section_links">
-	<span class="section_title">
-	Users</span>
+	<span class="section_title">Users</span>
 	&nbsp;|&nbsp;&nbsp;
 	<%= link_to 'New User', new_user_path %> &nbsp;
 </p>
@@ -10,4 +8,5 @@
 <%= div_for @users, class: 'user'  do |user| %>
 	<%= link_to user.name, user_path(user) %>
 <% end %>
-<%= render 'pagination' %>
+<br>
+<%= will_paginate @users %>

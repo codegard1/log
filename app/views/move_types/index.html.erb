@@ -1,4 +1,3 @@
-<%= render "shared/navigation_top" %>
 <p class="section_links">
 	<span class="section_title">Move Types</span>
 	&nbsp;|&nbsp;&nbsp;
@@ -6,10 +5,9 @@
 	<%= link_to 'New Move', moves_new_path %> &nbsp;
 </p>
 
-<!-- Paginate the Move Types -->
-<%= will_paginate @move_types %>
-
-<!-- Print an array of MoveType objects -->
-<%= div_for(@move_types) do |move_type| %>
+<!-- Show all MoveType -->
+<%= div_for(@move_types, class: 'move_type') do |move_type| %>
 	<%= link_to move_type.title, move_type_path(move_type) %>
 <% end %>
+<br>
+<%= will_paginate @move_types %>

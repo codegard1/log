@@ -1,8 +1,7 @@
-<!-- 11/16/14 Changed to simple_form syntax -->
 <%= simple_form_for @asset_type do |f| %>
-    <%= f.input :title %>
-    <br>
-    <%= f.input :group %>
-    <br>
-    <%= f.submit 'Save' %>
+    <%= f.input :title %><br>
+    <%= f.input :group %><br>
+    <%= f.button :submit %>
 <% end %>
+
+<p><%= link_to "Cancel", @asset_type %></p>

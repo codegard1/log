@@ -18,7 +18,7 @@ class AssetTypesController < ApplicationController
   end  
   
   def index
-    @asset_types = AssetType.order(:title)
+    @asset_types = AssetType.order(:title).page(params[:page])
     @asset_type_groups = AssetType.pluck(:group).sort
   end
 end

@@ -87,6 +87,40 @@ Move.create([
 #create a generic asset as an example
 Asset.create([
 			{
-			
-			}
+			title: 'E30',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0001	
+			},			
+			{
+			title: 'E31',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0002	
+			},
+			{
+			title: 'T430 i5',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0003	
+			},
+			{
+			title: 'T430 i7',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0004	
+			},			
+			{
+			title: 'W540 32GB',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0005	
+			},
+			{
+			title: 'x230',
+			asset_type_id: 1,
+			user_id: 1,
+			asset_tag: 0006	
+			},
+
 ])

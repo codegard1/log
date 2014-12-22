@@ -13,5 +13,6 @@ class Asset < ActiveRecord::Base
     @@type = AssetType.where(:id => self.asset_type_id).first.title
     "#{self.asset_tag}  -  #{@@type}"
   end
-  
+ 
+  self.per_page = 10 
 end

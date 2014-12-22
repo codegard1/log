@@ -1,17 +1,13 @@
-<!-- 11/16/14 changed to simple_form syntax
 <%= simple_form_for @move do |f| %>
 	<!-- text field for description -->
-	<%= f.input :description, as: :text %>
-    <br>
+	<%= f.input :description, as: :text %><br>
 	<!-- selection field for User -->
-  	<%= f.input :user_id, collection: User.all, :value_method => :id, :prompt => true %>
-    <br>
+	<%= f.input :user_id, collection: User.all, :value_method => :id, :prompt => true %><br>
 	<!-- Selection field for Move Type -->
-	<%= f.input :move_type_id, collection: MoveType.all, :value_method => :id, :prompt => true %>
-    <br>
+	<%= f.input :move_type_id, collection: MoveType.all, :value_method => :id, :prompt => true %><br>
 	<!-- Selection field for existing Assets-->
-	Select Existing Asset:<br>
-    <%= f.input :asset_id, collection: Asset.all, :value_method => :id, :prompt => true %>
-    <br>
+	<%= f.input :asset_id, collection: Asset.all, :value_method => :id, :prompt => true %><br>
 	<%= f.button :submit  %>
 <% end %>
+
+<%= link_to 'Cancel', @move %>

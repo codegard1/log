@@ -1,9 +1,2 @@
-<!-- 11/16/14Changed to simple_form syntax -->
-<h1>New Move Type</h1>
-
-<!-- Form to define a new Move Type. Only need a title. -->
-<%= simple_form_for @move_type do |f| %>
-	<%= f.input :title %>
-    <br>
-	<%= f.submit 'Save' %>
-<% end %>
+<h3>New Move Type</h3>
+<%= render 'form' %>

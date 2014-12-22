@@ -17,7 +17,7 @@ body {
 
 span.section_title {
   font: bold 18pt Georgia, serif ;
-  
+  color: blue;
 }
 
 div#navigation_top {
@@ -47,13 +47,20 @@ div#navigation_top a:hover, p.section_links a:hover {
 	color: blue;
 }
 
-input, select {
+input, select, textarea {
   padding: 5px;
+  max-width: 300px;
+  margin-left: 1em;
 }
 
-input#task_title, input#asset_title {
+input.button {
+	max-width: 50px;
+}
+
+textarea {
 	width: 300px;
 }
+
 select {
-	width: 200px;
+	width:200px;
 }

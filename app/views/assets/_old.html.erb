@@ -1,7 +1,0 @@
-<!-- show all Asset -->
-<%= div_for(@assets) do |asset| %>
-    <p><%= link_to((asset.title or "None"), asset) %></p>
-    <p><strong><%= link_to(asset.asset_type.title, asset_type_path(asset.asset_type)) || "none" %></strong></p>
-    <p><em><%= link_to(asset.user.name, user_path(asset.user)) %></em></p>
-    <p><em><%= asset.asset_tag %></em></p>
-<% end %>
