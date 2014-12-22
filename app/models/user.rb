@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_many :tasks
   #has_many :tasks, through: :task_list
 
-  self.per_page = 20
+  self.per_page = 10
 end

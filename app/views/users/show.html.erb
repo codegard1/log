@@ -1,24 +1,7 @@
 <%= render "shared/navigation_top" %>
 
-<!-- print user name -->
-<h4><span>
-    Assets belonging to <%= @user.name %></span></h4>
-
-<!-- Print ordered list of user asset records -->
-<% if @user_assets.count >= 1 %>
-  <%= div_for(@user_assets) do |user_asset| %>
-        <span><em><%= user_asset.title or "None" %></em></span><br>
-	<span><em><%= user_asset.asset_type.title or 'No type given' %></em></span><br>
-        <span><em><%= user_asset.asset_tag or 'No asset tag' %></em></span>
-  <% end %>
-<% else %>
-  <h2>No asset records found</h2>
-<% end %>
-<span>
-	<%= link_to 'New Asset Record for '+@user.name, new_asset_path(:id => @user) %>
-</span>
-
-
+<!-- Print List of assets belonging to user -->
+<%= render "users/assets" %>
+<hr>
 <!-- Print list of user-owned tasks -->
-
 <%= render "users/tasks" %>

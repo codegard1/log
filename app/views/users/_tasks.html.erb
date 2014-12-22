@@ -1,4 +1,4 @@
-<h4>Tasks for <%= @user.name %>
+<h4>Tasks for <%= @user.name %></h4>
 <!-- render a color-coded div li for each task in the list --> 
 <% if @user_tasks.count > 0 then %>
 	<%= div_for(@user_tasks) do |task| %>
@@ -11,9 +11,12 @@
 		</ul>
 	<% end %>
 <% else %>
-	<div>
-		<p style="margin-left:2.5em;">
-		<em>No Tasks</em></p>
-	</div>
+	<p style="margin-left:2.5em;">
+	  <em>No Tasks</em><br>
+	</p>
 <% end %>
+
+<span>
+	<%= link_to 'New Task', new_task_path(:id => @user) %>
+</span>
 

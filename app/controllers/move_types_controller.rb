@@ -18,7 +18,8 @@ class MoveTypesController < ApplicationController
   end
   
   def index
-  	@move_types = MoveType.all.sort_by! &:title
+  	#@move_types = MoveType.all.sort_by! &:title
+	@move_types = MoveType.order("title ASC").page(params[:page])
   end
 
   def show

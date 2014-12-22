@@ -8,6 +8,6 @@
 </p>
 
 <%= div_for @users, class: 'user'  do |user| %>
-	<%= link_to user.name, users_path(user) %>
+	<%= link_to user.name, user_path(user) %>
 <% end %>
 <%= render 'pagination' %>

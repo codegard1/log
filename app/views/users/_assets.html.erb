@@ -1,0 +1,20 @@
+<!-- print user name -->
+<h4><span>
+    Assets belonging to <%= @user.name %></span></h4>
+
+<!-- Print ordered list of user asset records -->
+<% if @user_assets.count >= 1 %>
+  <%= div_for(@user_assets) do |user_asset| %>
+        <span><em><%= user_asset.title or "None" %></em></span><br>
+	<span><em><%= user_asset.asset_type.title or 'No type given' %></em></span><br>
+        <span><em><%= user_asset.asset_tag or 'No asset tag' %></em></span>
+  <% end %>
+<% else %>
+  <p style="margin-left:2em;">
+    <em>No asset records found</em>
+  </p>
+<% end %>
+<span>
+	<%= link_to 'New Asset', new_asset_path(:id => @user) %>
+</span>
+
